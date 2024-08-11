@@ -77,7 +77,7 @@ export default function Home() {
         <HoverBorderGradient
         containerClassName="rounded-full"
         as="div"
-        className="dark:bg-black text-black dark:text-white w-80 rounded-full h-80 relative overflow-clip"
+        className="dark:bg-black text-black dark:text-white w-64 rounded-full h-64 relative overflow-clip"
       >
         <Image 
         priority
