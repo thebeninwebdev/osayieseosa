@@ -2,12 +2,14 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { FeaturesSectionDemo } from "@/components/ui/feature-section";
 import BentoGrid from "@/components/BentoGridSecond";
 import { Projects } from "@/components/Projects";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import Anchor from "@/components/Anchor";
 
 const words = [
   {
@@ -27,7 +29,6 @@ const words = [
     className: "text-blue-500 dark:text-blue-500",
   },
 ];
-
 
 export default function Home() {
 
@@ -65,12 +66,14 @@ export default function Home() {
             <TypewriterEffectSmooth words={words}/>
           </h2>
           <div className="flex space-x-4 pb-4">
-        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          Contact me
+        <button 
+        className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          <Anchor href="https://wa.link/t148zf" title="Contact me"/>
         </button>
       
-        <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
-  Download cv
+        <button 
+        className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
+          <Anchor href="https://teal-rozamond-56.tiiny.site/" title="Download cv"/>
 </button>
           </div>
         </div>
