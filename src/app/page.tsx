@@ -1,113 +1,139 @@
+"use client"
+
+import { useRef, useEffect } from "react";
 import Image from "next/image";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
+import { FeaturesSectionDemo } from "@/components/ui/feature-section";
+import BentoGrid from "@/components/BentoGridSecond";
+import { Projects } from "@/components/Projects";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+
+const words = [
+  {
+    text: "An",
+  },
+  {
+    text: "ever",
+  },
+  {
+    text: "curious",
+  },
+  {
+    text: "javascript",
+  },
+  {
+    text: "Developer.",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+];
+
 
 export default function Home() {
+
+  const cardsContainer = useRef<HTMLDivElement>(null)
+
+  const applyOverlayMask = (e: PointerEvent) => {
+    const documentTarget = e.currentTarget as Element
+
+    if(!cardsContainer.current){
+      return
+    }
+
+    const x = e.pageX - cardsContainer.current.offsetLeft
+    const y = e.pageY - cardsContainer.current.offsetTop
+
+    documentTarget.setAttribute("style",`--x: ${x}px;  --y: ${y}px; --opacity: 1`)
+  }
+
+  useEffect(() => {
+    document.body.addEventListener("pointermove", (e) => {
+      applyOverlayMask(e)
+    })
+  })
+
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <HeroHighlight>
+      <div className="flex-grow flex flex-col lg:flex-row items-center justify-center text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12">
+        <div className="flex flex-col items-center lg:items-start max-w-lg">
+          <p className="text-md sm:text-lg mb-2">HELLO THERE, WELCOME TO MY SITE</p>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-2">I&apos;m Eseosa Osayi</h1>
+          <h2 className="text-2xl sm:text-3xl font-bold text-green-500 mb-4">
+            <TypewriterEffectSmooth words={words}/>
+          </h2>
+          <div className="flex space-x-4 pb-4">
+        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          Contact me
+        </button>
+      
+        <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
+  Download cv
+</button>
+          </div>
+        </div>
+        <HoverBorderGradient
+        containerClassName="rounded-full"
+        as="div"
+        className="dark:bg-black text-black dark:text-white w-80 rounded-full h-80 relative overflow-clip"
+      >
+        <Image 
+        priority
+            src="/images/dp.jpg" 
+            fill
+            alt="Eseosa Osayi" 
+            className=" object-cover" 
+          />
+          </HoverBorderGradient>
+        </div>
+      </HeroHighlight>
+      <div className="w-full text-center pt-20 pb-5"> 
+        <h2 className="text-3xl font-bold">My Skills</h2>
+      </div>
+      <FeaturesSectionDemo/>
+      <div className="px-5 flex flex-wrap gap-10 justify-evenly py-20 items-center">
+       <div className="">
+        <h2 className="text-green-500 text-2xl font-bold">MY MOTIVATION</h2>
+        <div className="relative text-slate-200 w-[21rem] h-44 mx-auto my-10">
+        <div className="border-2 border-purple-900 w-44 h-44 flex items-center justify-center rounded-full absolute text-sm">View my work</div>
+        <div className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm">Contact me</div>
+        </div>
+       </div>
+       <div className="">
+        <p className="max-w-[60ch] text-sm text-slate-200">My journey into web development began with a spark ignited by my siblings, who encouraged me to explore tech. Initially, I lacked passion, but a pivotal moment changed everything. Watching a movie about hackers, I discovered a fascination with their lifestyle and work, feeling an instant sense of belonging. This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I honed my skills, and now, as a full-stack web developer, I can&apos;t imagine being anywhere else. Tech has become my passion and home.</p>
+        <br/>
+        <p className="text-3xl font-mono font-bold text-red-600">mrEseosa_</p>
+       </div>
+      </div>
+      <div className="px-2">
+      <BentoGrid/>
+      </div>
+      <div className="relative mt-40">
+      </div>
+      <Projects/>
+      <div className="py-20 px-5">
+        <h2 className="text-4xl py-16 font-bold text-center text-slate-100">My&nbsp;
+          <span className="text-green-600">Stack</span></h2>
+          <div className="flex flex-wrap gap-5 justify-evenly">
+          <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
+            <Image src="/images/nextjs.svg" alt="nextjs" width={200} height={200} className="w-28 h-auto"/>
+          </div>
+          <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
+            <Image src="/images/framer.svg" alt="framer" width={200} height={200} className="w-28 h-auto "/>
+          </div>
+          <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
+            <Image src="/images/mongodb.svg" alt="mongodb" width={200} height={200} className="w-28 h-auto"/>
+          </div>
+          <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
+            <Image src="/images/typescript.svg" alt="typescript" width={200} height={200} className="w-28 h-auto"/>
+          </div>
+          <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
+            <Image src="/images/figma.svg" alt="figma" width={200} height={200} className="w-28 h-auto"/>
+          </div>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
