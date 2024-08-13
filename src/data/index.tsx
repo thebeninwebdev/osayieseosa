@@ -1,8 +1,55 @@
+import {IconTimeline,IconKeyframes,IconArticle,IconAddressBook,IconBrandGithub, IconBrandInstagram,IconBrandStackoverflow,IconBrandWhatsapp,IconPhone} from "@tabler/icons-react"
+
 export const navItems = [
-    { name: "About", link: "#about" },
-    { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
-    { name: "Contact", link: "#contact" },
+    { 
+      name: "Projects", 
+      link: "/projects",
+      icon:(<IconTimeline className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />) 
+    },
+    { 
+      name: "Animations", 
+      link: "/animations",
+      icon:(<IconKeyframes className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+    },
+    { 
+      name: "Blogs", 
+      link: "/blogs",
+      icon:(<IconArticle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+    },
+    { 
+      name: "Contact", 
+      link: "/contact",
+      icon:(<IconAddressBook className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+    },
+    {
+      name: "Social media", 
+      links: [
+      {
+        name: "Github", 
+        link:"https://github.com/osayieseosa", 
+        icon:(<IconBrandGithub className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      },
+      {
+        name:"Instagram", 
+        link: "https://github.com/osayieseosa",
+        icon:(<IconBrandInstagram className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      },
+      {
+        name:"Stack Overflow", 
+        link:"https://stackoverflow.com/users/15001668/eseosa-osayi",
+        icon:(<IconBrandStackoverflow className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      },
+      {
+        name:"WhatsApp", 
+        link:"https://wa.link/5my8vf",
+        icon:(<IconBrandWhatsapp className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      },
+      {
+        name:"Tel", 
+        link:"tel:09155276978",
+        icon:(<IconPhone className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      }
+    ]}
   ];
   
   export const gridItems = [
@@ -101,20 +148,5 @@ export const navItems = [
       desc: "Developed and maintained user-facing features using modern frontend technologies.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
-    },
-  ];
-  
-  export const socialMedia = [
-    {
-      id: 1,
-      img: "/git.svg",
-    },
-    {
-      id: 2,
-      img: "/twit.svg",
-    },
-    {
-      id: 3,
-      img: "/link.svg",
     },
   ];

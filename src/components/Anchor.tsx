@@ -1,16 +1,18 @@
 import React from 'react'
 
-export default function Anchor({href,title}:{
+export default function Anchor({href,title,className,icon}:{
     href:string;
-    title:string;
+    title?:string;
+    className?: string;
+    icon?: React.JSX.Element | React.ReactNode;
 }) {
   return (
     <a
     target="_blank"
-    className="w-full" href={href}
+    className={`w-full ${className}`} href={href}
     rel="noopener noreferrer"
     >
-        {title}
+        {icon?icon:title}
     </a>
   )
 }

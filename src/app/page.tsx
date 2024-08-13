@@ -2,7 +2,6 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { FeaturesSectionDemo } from "@/components/ui/feature-section";
 import BentoGrid from "@/components/BentoGridSecond";
@@ -80,7 +79,7 @@ export default function Home() {
         <HoverBorderGradient
         containerClassName="rounded-full"
         as="div"
-        className="dark:bg-black text-black dark:text-white w-64 rounded-full h-64 relative overflow-clip"
+        className="dark:bg-black text-black dark:text-white w-64 sm:w-80 sm:h-80 rounded-full h-64 relative overflow-clip"
       >
         <Image 
         priority

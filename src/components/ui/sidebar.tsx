@@ -2,14 +2,19 @@
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
 import React, { useState, createContext, useContext } from "react";
+import { IconKeyframes } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import Image from "next/image";
+
 
 interface Links {
-  label: string;
-  href: string;
-  icon: React.JSX.Element | React.ReactNode;
+  name: string;
+  link?: string;
+  links?: Links[];
+  icon?: React.JSX.Element | React.ReactNode;
 }
+
 
 interface SidebarContextProps {
   open: boolean;
@@ -89,11 +94,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-black w-[300px] flex-shrink-0 border-r-[1px] border-neutral-500",
+          "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-black w-[200px] flex-shrink-0 border-r-[1px] border-neutral-500",
           className
         )}
         animate={{
-          width: animate ? (open ? "300px" : "60px") : "300px",
+          width: animate ? (open ? "200px" : "60px") : "200px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -104,6 +109,7 @@ export const DesktopSidebar = ({
     </>
   );
 };
+
 
 export const MobileSidebar = ({
   className,
@@ -119,11 +125,20 @@ export const MobileSidebar = ({
         )}
         {...props}
       >
-        <div className="flex justify-end z-20 w-full">
-          <div className="cursor-pointer"><IconMenu2
+        <div className="flex justify-between z-20 w-full">
+        <Image
+          src="/images/logo.png"
+          className="h-8 w-36"
+          width={80}
+          height={425}
+          alt="Avatar"
+        />
+          <div className="cursor-pointer">
+            <IconMenu2
             className="text-neutral-800 dark:text-neutral-200"
             onClick={() => setOpen(!open)}
-          /></div>
+          />
+          </div>
         </div>
         <AnimatePresence>
           {open && (
@@ -167,15 +182,14 @@ export const SidebarLink = ({
   const { open, animate } = useSidebar();
   return (
     <Link
-      href={link.href}
+      href={link.link as string}
       className={cn(
         "flex items-center justify-start gap-2  group/sidebar py-2",
         className
       )}
       {...props}
     >
-      {link.icon}
-
+      {link.icon?link.icon:<IconKeyframes className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />}
       <motion.span
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
@@ -183,7 +197,7 @@ export const SidebarLink = ({
         }}
         className="text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
       >
-        {link.label}
+        {link.name}
       </motion.span>
     </Link>
   );
