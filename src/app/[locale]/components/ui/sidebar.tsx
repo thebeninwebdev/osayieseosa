@@ -95,11 +95,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-black w-[200px] flex-shrink-0 border-r-[1px] border-neutral-500",
+          "h-full px-4 py-4 hidden md:flex md:flex-col bg-neutral-100 dark:bg-black w-[250px] flex-shrink-0 border-r-[1px] border-neutral-500",
           className
         )}
         animate={{
-          width: animate ? (open ? "200px" : "60px") : "200px",
+          width: animate ? (open ? "250px" : "60px") : "250px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -135,7 +135,7 @@ export const MobileSidebar = ({
           height={425}
           alt="Avatar"
         /></Link>
-        <LangSwitcher/>
+        <LangSwitcher className="flex-1"/>
           <div className="cursor-pointer flex items-center">
             <IconMenu2
             className="text-neutral-800 dark:text-neutral-200"
@@ -154,12 +154,12 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-white dark:bg-black p-10 z-[100] flex flex-col justify-between",
                 className
               )}
             >
               <div
-                className="absolute right-10 top-10 z-50 text-neutral-800 dark:text-neutral-200"
+                className="absolute right-10 top-10 z-50 text-neutral-800 dark:text-slate-200"
                 onClick={() => setOpen(!open)}
               >
                 <div className="cursor-pointer"><IconX /></div>

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import Anchor from "./Anchor";
 import {IconTimeline,IconKeyframes,IconArticle,IconAddressBook,IconBrandGithub, IconBrandInstagram,IconBrandStackoverflow,IconBrandWhatsapp,IconPhone, IconCertificate} from "@tabler/icons-react"
 import { useTranslations } from "next-intl";
+import LangSwitcher from "./LangSwitcher";
 
 
 export function SidebarDemo({
@@ -18,6 +19,15 @@ export function SidebarDemo({
 }>) {
   const [open, setOpen] = useState(false);
   const t = useTranslations('NavbarItems')
+  const [date, setDate] = useState(new Date());
+  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 1000)
+
+    return () => clearInterval(intervalId);
+  }, [])
 
 const navItems = [
     { 
@@ -96,8 +106,12 @@ const navItems = [
                 
               })}
             </div>
-  
+
           </div> 
+          <div className="flex justify-between">
+  <span className="text-neutral-200 text-xs bg-green-700 px-2">{date.toLocaleTimeString()}</span>
+  <LangSwitcher/>
+  </div>
           <div className="flex gap-3 w-full justify-evenly text-xs flex-wrap">
               {navItems.find((item) => item.name === "Social media")?.links?.map((item, idx) => (
                 <Anchor href={item.link} icon={item.icon} key={idx} className="w-max underline"/>
@@ -112,14 +126,14 @@ const navItems = [
 }
 export const Logo = () => {
   return (
-    <Link
-      href="/"
-      className="font-normal flex space-x-2 items-center text-sm text-slate-200 py-1 relative z-20"
+    <div
+      className="font-normal flex space-x-2 items-center w-max py-1 relative z-20"
     >
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
+      <Link href='/' className="w-max">
       <Image
         src="/images/logo.png"
         className="h-7 w-32 flex-shrink-0"
@@ -127,7 +141,8 @@ export const Logo = () => {
         height={425}
         alt="Avatar"
     />
-      </motion.span>
     </Link>
+      </motion.span>
+    </div>
   );
 };

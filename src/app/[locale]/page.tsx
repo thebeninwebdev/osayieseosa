@@ -59,10 +59,10 @@ export default function HomePage() {
   <HeroHighlight>
   <div className="flex-grow flex flex-col lg:flex-row items-center justify-center text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12">
     <div className="flex flex-col items-center lg:items-start max-w-xl">
-      <p className="text-md sm:text-lg mb-2">{t('greeting')}</p>
-      <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+      <p className="text-md sm:text-lg">{t('greeting')}</p>
+      <h1 className="text-[2.5rem] sm:text-5xl font-bold">
         {t('introduction')}</h1>
-      <h2 className="text-2xl sm:text-3xl font-semibold text-green-500 mb-2">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-green-500 mb-4">
         <TypewriterEffectSmooth words={words}/>
       </h2>
       <div className="flex space-x-4 pb-4">
