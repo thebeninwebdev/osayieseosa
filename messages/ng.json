@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+      "greeting":"HOW FAR NA, WELCOME TO MY WEBSITE",
+      "introduction":"I'm Eseosa Osayi",
+      "phrase1": "One",
+      "phrase2": "Javascript",
+      "phrase3": "developer",
+      "phrase4": "Wey",
+      "hightlight": "Curious",
+      "firstButon": "Kontact me",
+      "secondButton": "Download cv"
+  },
+  "NavbarItems": {
+      "projects":"Projekts",
+      "animations":"Animashons",
+      "blogs": "Blogs",
+      "contact": "Kontact",
+      "courses": "Lessons"
+  }
+}

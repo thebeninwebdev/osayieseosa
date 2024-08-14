@@ -1,0 +1,21 @@
+{
+    "HomePage": {
+        "greeting":"HELLO THERE, WELCOME TO MY SITE",
+        "introduction":"I'm Eseosa Osayi",
+        "phrase1": "An",
+        "phrase2": "ever",
+        "phrase3": "curious",
+        "phrase4": "javascript",
+        "hightlight": "Developer",
+        "firstButon": "Contact me",
+        "secondButton": "Download cv"
+    },
+    "NavbarItems": {
+        "projects":"Projects",
+        "animations":"Animations",
+        "blogs": "Blogs",
+        "contact": "Contact",
+        "courses": "Courses"
+    }
+  }
+    

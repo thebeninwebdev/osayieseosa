@@ -6,6 +6,7 @@ import { IconKeyframes } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
+import LangSwitcher from "../LangSwitcher";
 
 
 interface Links {
@@ -125,15 +126,17 @@ export const MobileSidebar = ({
         )}
         {...props}
       >
-        <div className="flex justify-between z-20 w-full">
+        <div className="flex z-20 w-full">
+          <Link href="/"> 
         <Image
           src="/images/logo.png"
-          className="h-8 w-36"
+          className="h-7 w-36"
           width={80}
           height={425}
           alt="Avatar"
-        />
-          <div className="cursor-pointer">
+        /></Link>
+        <LangSwitcher/>
+          <div className="cursor-pointer flex items-center">
             <IconMenu2
             className="text-neutral-800 dark:text-neutral-200"
             onClick={() => setOpen(!open)}
