@@ -91,10 +91,15 @@ export default function HomePage() {
       </HoverBorderGradient>
     </div>
   </HeroHighlight>
-  <div className="w-full text-center pt-20 pb-5"> 
-    <h2 className="text-3xl font-bold">My Skills</h2>
+  <div className="w-full py-20"> 
+    <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Skills</h2>
+    <FeaturesSectionDemo/>
   </div>
-  <FeaturesSectionDemo/>
+  <div className="w-full py-20">
+  <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Recent Projects</h2>
+  <Projects/>
+  </div>
+  
   <div className="px-5 flex flex-wrap gap-10 justify-evenly py-20 items-center">
    <div className="">
     <h2 className="text-green-500 text-2xl font-bold">MY MOTIVATION</h2>
@@ -104,17 +109,13 @@ export default function HomePage() {
     </div>
    </div>
    <div className="">
-    <p className="max-w-[60ch] text-sm text-slate-200">My journey into web development began with a spark ignited by my siblings, who encouraged me to explore tech. Initially, I lacked passion, but a pivotal moment changed everything. Watching a movie about hackers, I discovered a fascination with their lifestyle and work, feeling an instant sense of belonging. This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I honed my skills, and now, as a full-stack web developer, I can&apos;t imagine being anywhere else. Tech has become my passion and home.</p>
+    <p className="max-w-[60ch] text-sm text-slate-200">{t('MOTIVATION')}</p>
     <br/>
     <p className="text-3xl font-mono font-bold text-red-600">mrEseosa_</p>
    </div>
   </div>
-  <div className="px-2">
-  <BentoGrid/>
-  </div>
   <div className="relative mt-40">
   </div>
-  <Projects/>
   <div className="py-20 px-5">
     <h2 className="text-4xl py-16 font-bold text-center text-slate-100">My&nbsp;
       <span className="text-green-600">Stack</span></h2>
@@ -123,7 +124,7 @@ export default function HomePage() {
         <Image src="/images/nextjs.svg" alt="nextjs" width={200} height={200} className="w-28 h-auto"/>
       </div>
       <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
-        <Image src="/images/framer.svg" alt="framer" width={200} height={200} className="w-28 h-auto "/>
+        <Image src="/images/framer.svg" alt="framer" width={200} height={200} className="w-28 h-auto"/>
       </div>
       <div className="p-5 border-2 border-slate-200 rounded-2xl w-max">
         <Image src="/images/mongodb.svg" alt="mongodb" width={200} height={200} className="w-28 h-auto"/>
