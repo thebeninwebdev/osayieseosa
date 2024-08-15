@@ -36,8 +36,8 @@ export function Project({title,description,img,link, iconLists}:{
           </div>
           <div className="flex justify-between">
           <div className="flex flex-wrap w-max justify-center">
-            {iconLists.map((src:string) => (
-              <Image src={src} width={24} height={24} alt={src} className="border-[1px] p-1 rounded-full"/>
+            {iconLists.map((src:string,index) => (
+              <Image key={index} src={src} width={24} height={24} alt={src} className="border-[1px] p-1 rounded-full"/>
             ))}
           </div>
           <Link href={link} className="text-sm underline text-green-300">Check Live Site</Link>
