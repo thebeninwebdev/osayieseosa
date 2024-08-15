@@ -13,12 +13,12 @@ export function Project({title,description,img,link, iconLists}:{
     iconLists:string[];
 }) {
     return (
-      <div className="h-[28rem] w-max flex items-center justify-center">
+      <div className="h-[28rem] w-[80vw] sm:w-96 flex items-center justify-center overflow-hidden">
         <PinContainer
           title={link}
           href={link}
         >
-          <div className="flex basis-full flex-col p-1 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[24rem]">
+          <div className="flex basis-full flex-col p-1 tracking-tight text-slate-100/50 sm:basis-1/2 w-[80vw] h-[24rem] sm:w-[20rem]">
           <Image
             alt={title}
             src={img}
