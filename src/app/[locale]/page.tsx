@@ -1,18 +1,33 @@
 "use client"
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { HeroHighlight } from "./components/ui/hero-highlight";
+import animationData from '@/data/confetti.json'
+import { IconCopy, IconCircleCheck } from "@tabler/icons-react";
 import { FeaturesSectionDemo } from "./components/ui/feature-section";
-import BentoGrid from "./components/BentoGridSecond";
+import {CopyToClipboard} from 'react-copy-to-clipboard'
 import { Projects } from "./components/Projects";
 import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
 import { TypewriterEffectSmooth } from "./components/ui/typewriter-effect";
 import Anchor from "./components/Anchor";
 import {useTranslations} from 'next-intl';
 import { ContactForm } from "./components/ContactForm";
+import { toast } from "sonner";
+import Lottie from "react-lottie";
  
 export default function HomePage() {
+  const textToCopy = 'osayieseosa836@gmail.com'
+  const [copyStatus, setCopyStatus] = useState<boolean>(false)
+
+  const handleOnCopy = (text:string, result:any) => {
+    if(result){
+      setCopyStatus(true)
+      setTimeout(() => setCopyStatus(false), 3000)
+    }else{
+      toast.error("Failed to copy text, try again")
+    }
+  }
 
   const t = useTranslations('HomePage');
 
@@ -137,7 +152,35 @@ export default function HomePage() {
   </div>
   <div className="w-full py-20">
   <ContactForm/>
+
   </div>
+  <div className="h-max bg-gradient-to-r from-slate-800 to-slate-500 w-full relative">
+  <div className="w-full max-w-xl relative py-20 px-2 flex sm:justify-between mx-auto flex-col sm:flex-row">
+    <div className="flex flex-col gap-2 w-full sm:max-w-96 py-5 text-center sm:text-left">
+    <h2 className="font-bold text-xl text-neutral-200">Are you impressed by work? Let&apos;talk</h2>
+    <p className="text-xs text-neutral-300 max-w-[50ch] mx-auto sm:mx-0">I would love nothing more than to hear about your project and how i can be of service.</p>
+    </div>
+<div className="flex items-center sm:w-max w-full justify-center">
+<div className={`absolute -bottom-5 right-0`}>
+  <Lottie options={{
+    loop:copyStatus,
+    autoplay:copyStatus,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }}/>
+</div>
+<CopyToClipboard text={textToCopy} onCopy={handleOnCopy}>
+<button className="px-6 py-3 rounded-md border border-neutral-300 text-neutral-100 bg-black hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-xs font-medium flex gap-1 items-center">
+{copyStatus?<IconCircleCheck className="w-4"/>:<IconCopy className="w-4"/>}<span>Copy my email</span>
+</button>
+</CopyToClipboard>
+</div>
+
+  </div>
+  </div>
+
 </div>
 );
 }
