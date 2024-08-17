@@ -2,8 +2,8 @@
 import React from "react";
 import { PinContainer } from "./ui/3d-pin";
 import Image from "next/image";
-import { products } from "@/data";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export function Project({title,description,img,link, iconLists}:{
     title:string;
@@ -12,8 +12,9 @@ export function Project({title,description,img,link, iconLists}:{
     link:string;
     iconLists:string[];
 }) {
+
     return (
-      <div className="h-[28rem] w-[80vw] sm:w-96 flex items-center justify-center overflow-hidden">
+      <div className="h-[28rem] w-full sm:w-96 flex items-center justify-center overflow-hidden">
         <PinContainer
           title={link}
           href={link}
@@ -36,9 +37,19 @@ export function Project({title,description,img,link, iconLists}:{
           </div>
           <div className="flex justify-between">
           <div className="flex flex-wrap w-max justify-center">
-            {iconLists.map((src:string,index) => (
-              <Image key={index} src={src} width={24} height={24} alt={src} className="border-[1px] p-1 rounded-full"/>
-            ))}
+
+          {
+          iconLists.map((src:string,index) => (
+              <Image 
+                key={index} 
+                src={src} 
+                width={24} 
+                height={24} 
+                alt={src} 
+                className="border-[1px] p-1 rounded-full"
+              />
+            ))
+          }
           </div>
           <Link href={link} className="text-sm underline text-green-300">Check Live Site</Link>
           </div>
@@ -50,17 +61,55 @@ export function Project({title,description,img,link, iconLists}:{
   }
 
 export function Projects() {
+  const t = useTranslations('Projects')
+  const products = [
+    {
+      id: 1,
+      title: "Jatinz - Ecomerce App",
+      des: t('jatinz'),
+      img: "/images/thumbnails/jatinz.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://jatinz.com",
+    },
+
+    {
+      id: 2,
+      title:"Norbile Foods - Online Restaurant",
+      des: t('norbileFoods'),
+      img: "/images/thumbnails/norbilefoods.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://norbilefoods.vercel.app/",
+    },
+
+    {
+      id: 3,
+      title: t('lavic'),
+      img: "/images/thumbnails/lavicmedicals.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://www.lavicmedicals.org/",
+    },
+
+    {
+      id: 4,
+      title: "Legit gemini exchange",
+      des: t('gemini'),
+      img: "/images/thumbnails/legitexchange.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://www.legitgeminiexchange.com/",
+    },
+
+  ];
   return (
     <div className="flex flex-wrap w-full p-5 gap-20 justify-center">
      { products.map(
         ({title,des,img,link, iconLists},index) => (
         <Project
-            key={index}
-            title={title}
-            description={des}
-            iconLists={iconLists}
-            img={img}
-            link={link}
+          key={index}
+          title={title}
+          description={des as string}
+          iconLists={iconLists}
+          img={img}
+          link={link}
         />
       ))}
     </div>
