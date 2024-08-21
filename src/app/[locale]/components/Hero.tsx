@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { BsFacebook, BsLinkedin, BsInstagram,BsTwitterX, } from "react-icons/bs";
 import {CiSettings} from 'react-icons/ci'
-import { useAppContext } from "@/content/blog/context";
+import { useAppContext } from "@/context";
 
 export default function Hero(){
     
