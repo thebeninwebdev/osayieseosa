@@ -8,6 +8,7 @@ import NextTopLoader from "nextjs-toploader";
 import { SidebarDemo } from "./components/Sidebar";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from 'sonner';
+import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: "Eseosa Osayi - Official home page",
@@ -42,9 +43,10 @@ export default async function LocaleLayout({
           >
             <NextIntlClientProvider messages={messages}>
             <SidebarDemo>
-            <div  className="h-full relative overflow-y-auto">
+            <div  className="h-full relative overflow-y-auto w-full">
               <Toaster position="bottom-right" richColors/>
               {children}
+              <Footer/>
             </div>
           </SidebarDemo>
           </NextIntlClientProvider>

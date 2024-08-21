@@ -1,13 +1,13 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Link, { LinkProps } from "next/link";
+import {LinkProps} from 'next/link'
+import { Link } from "@/navigation";
 import React, { useState, createContext, useContext } from "react";
 import { IconKeyframes } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import LangSwitcher from "../LangSwitcher";
-
 
 interface Links {
   name: string;

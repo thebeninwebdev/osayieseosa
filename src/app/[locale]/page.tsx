@@ -5,6 +5,7 @@ import Image from "next/image";
 import { HeroHighlight } from "./components/ui/hero-highlight";
 import animationData from '@/data/confetti.json'
 import { IconCopy, IconCircleCheck } from "@tabler/icons-react";
+import Link from 'next/link'
 import { FeaturesSectionDemo } from "./components/ui/feature-section";
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import { Projects } from "./components/Projects";
@@ -180,7 +181,6 @@ export default function HomePage() {
 
   </div>
   </div>
-
 </div>
 );
 }

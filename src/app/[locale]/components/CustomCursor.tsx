@@ -1,6 +1,6 @@
 'use client'
 
-import { useAppContext } from "@/context"
+import { useAppContext } from "@/content/blog/context"
 import React, {useEffect, useRef, useState} from "react"
 
 //Main CustomCursor component
