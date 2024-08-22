@@ -1,11 +1,10 @@
 "use client"
 
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { HeroHighlight } from "./components/ui/hero-highlight";
 import animationData from '@/data/confetti.json'
 import { IconCopy, IconCircleCheck } from "@tabler/icons-react";
-import Link from 'next/link'
 import { FeaturesSectionDemo } from "./components/ui/feature-section";
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import { Projects } from "./components/Projects";
@@ -51,26 +50,6 @@ export default function HomePage() {
     },
   ];
 
-  const cardsContainer = useRef<HTMLDivElement>(null)
-
-  const applyOverlayMask = (e: PointerEvent) => {
-    const documentTarget = e.currentTarget as Element
-
-    if(!cardsContainer.current){
-      return
-    }
-
-    const x = e.pageX - cardsContainer.current.offsetLeft
-    const y = e.pageY - cardsContainer.current.offsetTop
-
-    documentTarget.setAttribute("style",`--x: ${x}px;  --y: ${y}px; --opacity: 1`)
-  }
-
-  useEffect(() => {
-    document.body.addEventListener("pointermove", (e) => {
-      applyOverlayMask(e)
-    })
-  })
   return (
   <div className="w-full h-max">
   <HeroHighlight>
@@ -120,8 +99,10 @@ export default function HomePage() {
    <div className="">
     <h2 className="text-green-500 text-2xl font-bold">MY MOTIVATION</h2>
     <div className="relative text-slate-200 w-[21rem] h-44 mx-auto my-10">
-    <div className="border-2 border-purple-900 w-44 h-44 flex items-center justify-center rounded-full absolute text-sm">View my work</div>
-    <div className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm">Contact me</div>
+    <div
+    className="border-2 border-purple-900 w-44 h-44 flex items-center justify-center rounded-full absolute text-sm">View my work</div>
+    <div
+    className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm">Contact me</div>
     </div>
    </div>
    <div className="">

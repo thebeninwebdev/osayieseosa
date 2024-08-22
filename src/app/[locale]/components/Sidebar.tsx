@@ -45,12 +45,7 @@ const navItems = [
       link: "/blog",
       icon:(<IconArticle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
     },
-    { 
-      name: t('contact'), 
-      link: "/contact",
-      icon:(<IconAddressBook className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-    },
-    { 
+    {
       name: t('courses'), 
       link: "/courses",
       icon:(<IconCertificate className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)

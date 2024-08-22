@@ -31,8 +31,8 @@ export default async function LocaleLayout({
         <SplashScreenProvider>
       <NextTopLoader 
           shadow={false} 
-          height={5} 
-          color="blue" 
+          height={1} 
+          color="green" 
           showSpinner={false}
           />
           <ThemeProvider
