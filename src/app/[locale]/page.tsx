@@ -72,7 +72,7 @@ export default function HomePage() {
     })
   })
   return (
-  <div className="w-full h-full">
+  <div className="w-full h-max">
   <HeroHighlight>
   <div className="flex-grow flex flex-col lg:flex-row items-center justify-center text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12">
     <div className="flex flex-col items-center lg:items-start max-w-xl">

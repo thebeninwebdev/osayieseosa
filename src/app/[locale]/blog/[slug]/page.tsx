@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 interface PostPageProps{params:{slug:string}}
 
-export const generateStaticParams = async () => allDocs.map((post) => ({ slug: post.slug }))
+// export const generateStaticParams = async () => allDocs.map((post) => ({ slug: post.slug }))
 
 export const generateMetadata = ({ params }: PostPageProps) => {
   const post = allDocs.find((post) => post.slugAsParams == params.slug)
