@@ -120,7 +120,7 @@ export const MobileSidebar = ({
   const { open, setOpen } = useSidebar();
   return (
     <>
-    {open &&<div className="inset-0 bg-black absolute z-50 opacity-50"/>}
+    {open &&<div className="inset-0 bg-black absolute z-50 opacity-50 lg:hidden"/>}
       <div
         className={cn(
           "h-16 px-5 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-black border-b-[1px] border-neutral-500"

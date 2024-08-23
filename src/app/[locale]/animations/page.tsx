@@ -39,7 +39,7 @@ export default function Animation() {
     },
     {
       title: "Ripple animation",
-      link: "https://codepen.io/osayieseosa/embed/ExBLvrQ?default-tab=html%2Cresult",
+      link: "https://codepen.io/osayieseosa/embed/ExBLvrQ?default-tab=js%2Cresult",
       defaultLink: "https://codepen.io/osayieseosa/pen/ExBLvrQ"
     },
     {

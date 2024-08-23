@@ -56,7 +56,7 @@ export default function HomePage() {
   <div className="w-full h-max">
   <HeroHighlight>
   <div className="flex-grow flex flex-col lg:flex-row items-center justify-center text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12">
-    <div className="flex flex-col items-center lg:items-start max-w-xl">
+    <div className="flex flex-col items-center lg:items-start max-w-3xl">
       <p className="text-md sm:text-lg">{t('greeting')}</p>
       <h1 className="text-[2.5rem] sm:text-5xl font-bold">
         {t('introduction')}</h1>
@@ -142,8 +142,8 @@ export default function HomePage() {
   <div className="h-max bg-gradient-to-r from-slate-800 to-slate-500 w-full relative">
   <div className="w-full max-w-xl relative py-20 px-2 flex sm:justify-between mx-auto flex-col sm:flex-row">
     <div className="flex flex-col gap-2 w-full sm:max-w-96 py-5 text-center sm:text-left">
-    <h2 className="font-bold text-xl text-neutral-200">{t('ctaTitle')}</h2>
-    <p className="text-xs text-neutral-300 max-w-[50ch] mx-auto sm:mx-0">{t('ctaDescription')}</p>
+    <h2 className="font-bold text-xl text-neutral-200 sm:text-2xl">{t('ctaTitle')}</h2>
+    <p className="text-xs text-neutral-300 max-w-[50ch] mx-auto sm:mx-0 sm:text-sm">{t('ctaDescription')}</p>
     </div>
 <div className="flex items-center sm:w-max w-full justify-center">
 <div className={`absolute -bottom-5 right-0`}>
