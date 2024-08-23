@@ -1,9 +1,10 @@
-"use client"
-
+'use client'
 import { useState } from "react";
 import Image from "next/image";
 import { HeroHighlight } from "./components/ui/hero-highlight";
+import { useAppContext } from "@/context";
 import animationData from '@/data/confetti.json'
+import { toast } from "sonner";
 import { IconCopy, IconCircleCheck } from "@tabler/icons-react";
 import { FeaturesSectionDemo } from "./components/ui/feature-section";
 import {CopyToClipboard} from 'react-copy-to-clipboard'
@@ -13,11 +14,11 @@ import { TypewriterEffectSmooth } from "./components/ui/typewriter-effect";
 import Anchor from "./components/Anchor";
 import {useTranslations} from 'next-intl';
 import { ContactForm } from "./components/ContactForm";
-import { toast } from "sonner";
 import Lottie from "react-lottie";
  
 export default function HomePage() {
-  const textToCopy = 'osayieseosa836@gmail.com'
+  const {EMAIL} = useAppContext()
+  const textToCopy = EMAIL
   const [copyStatus, setCopyStatus] = useState<boolean>(false)
 
   const handleOnCopy = (text:string, result:any) => {
@@ -28,6 +29,7 @@ export default function HomePage() {
       toast.error("Failed to copy text, try again")
     }
   }
+
 
   const t = useTranslations('HomePage');
 
@@ -78,9 +80,10 @@ export default function HomePage() {
     as="div"
     className="dark:bg-black text-black dark:text-white w-72 sm:w-80 sm:h-80 rounded-full h-72 relative overflow-clip">
     <Image 
-    priority
+        priority
         src="/images/dp.jpg" 
         fill
+        sizes="(max-w:768px) 320px, 288px"
         alt="Eseosa Osayi" 
         className=" object-cover" 
       />

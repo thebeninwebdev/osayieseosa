@@ -1,11 +1,7 @@
 import React from 'react'
+import { Anchors } from '@/types'
 
-export default function Anchor({href,title,className,icon}:{
-    href:string;
-    title?:string;
-    className?: string;
-    icon?: React.JSX.Element | React.ReactNode;
-}) {
+export default function Anchor({href,title,className,icon}:Anchors) {
   return (
     <a
     target="_blank"

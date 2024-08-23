@@ -2,16 +2,22 @@ import {locales} from './config'
 
 export type Locale = (typeof locales)[number]
 
-export type ToastMessageContext = "default" | "info" | "success" | "warning" | "error"
-
-export interface IToastMessageProps {
-    message: string;
-    context?: ToastMessageContext;
-    onClose?: () => void
+export interface Animations {
+    title: string;
+    link: string;
+    defaultLink: string;
+  }
+export interface Anchors {
+  href:string;
+  title?:string;
+  className?: string;
+  icon?: React.JSX.Element | React.ReactNode;
 }
 
-export interface IToastMessage {
-    id: string;
-    message: string;
-    context: ToastMessageContext;
+export interface ProjectsObject {
+  title:string;
+  description:string;
+  img:string;
+  link:string;
+  iconLists:string[];
 }

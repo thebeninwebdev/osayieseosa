@@ -57,8 +57,7 @@ export default async function page() {
                 <div className="">
                 {sortedPosts?.length > 0 ? (
                     <ul className='flex flex-col'>
-                       { sortedPosts.map((post:any) => {
-                        const {slug, date, title, description} = post
+                       { sortedPosts.map(({slug, date, title, description}) => {
                         return <li key={slug}>
                             <PostItem slug={slug} date={date} title={title} description={description}/>
                         </li>

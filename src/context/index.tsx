@@ -1,6 +1,6 @@
 "use client"
 
-import React, {createContext, useState, useContext} from 'react'
+import React, {createContext, useContext} from 'react'
 
 const AppContext = createContext<any>(undefined)
 
@@ -8,13 +8,14 @@ const AppContext = createContext<any>(undefined)
 export function AppWrapper({children}: {
     children: React.ReactNode;
 }){
-    const [activeStyle, setActiveStyle] = useState("final")
-    const textEnter = () => setActiveStyle("initial")
-    const textLeave = () => setActiveStyle("final")
+
+    const EMAIL:string = "hello@mreseosa.com"
+    const LAUNCH_DATE:string = "Thu, August 22"
+    const COMPANY_NAME:string = "mrEseosa_"
 
 
     return (
-        <AppContext.Provider value={{activeStyle, setActiveStyle, textEnter, textLeave}}>{children}</AppContext.Provider>
+        <AppContext.Provider value={{EMAIL, LAUNCH_DATE, COMPANY_NAME}}>{children}</AppContext.Provider>
       )
 }
 

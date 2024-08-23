@@ -4,14 +4,9 @@ import { PinContainer } from "./ui/3d-pin";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { ProjectsObject } from "@/types";
 
-export function Project({title,description,img,link, iconLists}:{
-    title:string;
-    description:string;
-    img:string;
-    link:string;
-    iconLists:string[];
-}) {
+export function Project({title,description,img,link, iconLists}:ProjectsObject) {
 
     return (
       <div className="h-[28rem] w-full sm:w-96 flex items-center justify-center overflow-hidden">

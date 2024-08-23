@@ -1,12 +1,14 @@
-import React from 'react'
-const LAUNCH_DATE:string = "Thu, August 22"
+'use client'
+import { useAppContext } from "@/context"
+import Anchor from "../components/Anchor"
 
-export default function privacy () {
+export default function Privacy () {
+  const {LAUNCH_DATE, EMAIL, COMPANY_NAME} = useAppContext()
   return (
     <div className='py-20 px-5 min-h-screen'>
       <div className='w-full max-w-lg mx-auto text-slate-200'>
         <h1 className='text-4xl pb-5 font-bold text-green-500'>Privacy Policy</h1>
-        <p className='pb-14 text-md text-slate-100'>At mrEseosa_ , I am committed to protecting the privacy of my website visitors. This Privacy Policy explains how i collect, use, and protect personal data.</p>
+        <p className='pb-14 text-md text-slate-100'>At {COMPANY_NAME} , I am committed to protecting the privacy of my website visitors. This Privacy Policy explains how i collect, use, and protect personal data.</p>
 
 
         <div className='space-y-5'>
@@ -30,7 +32,7 @@ export default function privacy () {
 </div>
 <div className='space-y-2'>
 <h2>Contact</h2>
-        <p>If you have questions or concerns, please contact me at hello@mreseosa.com</p>
+        <p>If you have questions or concerns, please contact me at <Anchor title={EMAIL} href={`mailto:${EMAIL}`}/></p>
 
 </div>
 <div className='space-y-2'>

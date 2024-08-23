@@ -12,6 +12,7 @@
         "MOTIVATION":"My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong."
     },
     "NavbarItems": {
+        "home": "Home",
         "projects":"Projects",
         "animations":"Animations",
         "blogs": "Blogs",
@@ -35,10 +36,9 @@
         "lavic": "Expert medical care in the comfort of your own home.",
         "gemini": "Discover a safer way to buy and sell cryptocurrency"
     },
-    "Animations": {
-        "jatinz": "Discover the vibrant essence of Nigeria at, your premier destination for authentic Nigerian-made products.",
-        "norbileFoods": "Cheap and affordable food with deliveries all over benin.",
-        "lavic": "Expert medical care in the comfort of your own home.",
-        "gemini": "Discover a safer way to buy and sell cryptocurrency"
+    "404": {
+        "title": "Uh-Oh...",
+        "description": "The page you are looking for may have been moved, deleted, or possibly never existed.",
+        "link": "return home"
     }
   }

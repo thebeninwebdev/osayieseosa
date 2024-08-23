@@ -1,7 +1,7 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import { AppWrapper } from "@/context";
 import SplashScreenProvider from "./components/splash-screen-provider";
 import NextTopLoader from "nextjs-toploader";
@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 export const metadata: Metadata = {
   title: "Eseosa Osayi - Official home page",
   description: "Driven by curiosity, fueled by passion, delivering top-notch web applications.",
+  themeColor: "#000000"
 };
 
 export default async function LocaleLayout({
@@ -31,7 +32,7 @@ export default async function LocaleLayout({
         <SplashScreenProvider>
       <NextTopLoader 
           shadow={false} 
-          height={1} 
+          height={2} 
           color="green" 
           showSpinner={false}
           />

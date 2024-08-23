@@ -8,7 +8,6 @@ import emailjs from '@emailjs/browser'
 import { toast } from "sonner";
 
 export function ContactForm() {
-
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const form = useRef<HTMLFormElement | null>(null);

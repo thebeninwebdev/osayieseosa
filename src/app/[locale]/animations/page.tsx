@@ -1,21 +1,29 @@
 import React from 'react'
 import Anchor from '../components/Anchor'
+import { Animations } from '@/types'
 
-interface Animations {
-  title: string;
-  link: string;
-  defaultLink: string;
-}
 
 const IframeComponent = ({link, title,defaultLink}:Animations) => {
   return(
-    <iframe height="300" style={{width: "100%"}} title={title} src={link} loading="lazy" allowTransparency allowFullScreen>
-    See the pen<Anchor href={defaultLink} title="By Eseosa"/>
+    <iframe 
+    height="300" 
+    style={{width: "100%"}} 
+    title={title} 
+    src={link} 
+    loading="lazy" 
+    allowTransparency
+    allowFullScreen
+    >
+    See the pen
+    <Anchor 
+    href={defaultLink} 
+    title="By Eseosa"
+    />
     </iframe>
   )
 }
 
-export default function animations() {
+export default function Animation() {
   const animationsArray:Animations[] = [
     {
       title: "Tech guy",
@@ -34,11 +42,7 @@ export default function animations() {
           link={link}
           defaultLink={defaultLink}
         />
-        )
-
-      } 
-
-      )}
+        )})}
       </div>
     </div>
   )

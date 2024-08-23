@@ -120,9 +120,10 @@ export const MobileSidebar = ({
   const { open, setOpen } = useSidebar();
   return (
     <>
+    {open &&<div className="inset-0 bg-black absolute z-50 opacity-50"/>}
       <div
         className={cn(
-          "h-16 px-5 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-black w-full border-b-[1px] border-neutral-500"
+          "h-16 px-5 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-black border-b-[1px] border-neutral-500"
         )}
         {...props}
       >
@@ -154,7 +155,7 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white dark:bg-black p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full  w-[calc(100%_-_50px)] inset-0 bg-white dark:bg-black px-5 py-10 sm:p-10 z-[100] flex flex-col justify-between border-r-[1px] border-neutral-300",
                 className
               )}
             >

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Anchor from "./Anchor";
-import {IconTimeline,IconKeyframes,IconArticle,IconAddressBook,IconBrandGithub, IconBrandInstagram,IconBrandStackoverflow,IconBrandWhatsapp,IconPhone, IconCertificate} from "@tabler/icons-react"
+import {IconTimeline,IconKeyframes,IconArticle,IconBrandGithub, IconBrandInstagram,IconBrandStackoverflow,IconBrandWhatsapp,IconPhone, IconCertificate, IconHome2} from "@tabler/icons-react"
 import { useTranslations } from "next-intl";
 import LangSwitcher from "./LangSwitcher";
 
@@ -30,6 +30,11 @@ export function SidebarDemo({
   }, [])
 
 const navItems = [
+    { 
+      name: t('home'), 
+      link: "/",
+      icon:(<IconHome2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />) 
+    },
     { 
       name: t('projects'), 
       link: "/projects",
