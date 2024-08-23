@@ -56,7 +56,7 @@ export default function Animation() {
   return (
     <div className='min-h-screen w-full py-20 px-5'>
       <h1 className='pb-10 text-xl font-bold text-green-500'>{t('title')}</h1>
-      <div className='w-full max-w-lg mx-auto'>
+      <div className='w-full max-w-lg mx-auto space-y-20'>
       {animationsArray.map(({title,link,defaultLink}:Animations, index:number) =>{
         return(
           <IframeComponent
