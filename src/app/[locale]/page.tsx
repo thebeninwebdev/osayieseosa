@@ -142,8 +142,8 @@ export default function HomePage() {
   <div className="h-max bg-gradient-to-r from-slate-800 to-slate-500 w-full relative">
   <div className="w-full max-w-xl relative py-20 px-2 flex sm:justify-between mx-auto flex-col sm:flex-row">
     <div className="flex flex-col gap-2 w-full sm:max-w-96 py-5 text-center sm:text-left">
-    <h2 className="font-bold text-xl text-neutral-200">Are you impressed by work? Let&apos;talk</h2>
-    <p className="text-xs text-neutral-300 max-w-[50ch] mx-auto sm:mx-0">I would love nothing more than to hear about your project and how i can be of service.</p>
+    <h2 className="font-bold text-xl text-neutral-200">{t('ctaTitle')}</h2>
+    <p className="text-xs text-neutral-300 max-w-[50ch] mx-auto sm:mx-0">{t('ctaDescription')}</p>
     </div>
 <div className="flex items-center sm:w-max w-full justify-center">
 <div className={`absolute -bottom-5 right-0`}>

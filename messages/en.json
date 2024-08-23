@@ -9,7 +9,9 @@
         "hightlight": "Developer",
         "firstButon": "Contact me",
         "secondButton": "Download cv",
-        "MOTIVATION":"My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong."
+        "MOTIVATION":"My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong.",
+        "ctaTitle":"Are you impressed by my work? Let's talk",
+        "ctaDescription":"I would love nothing more than to hear about your project and how i can be of service."
     },
     "NavbarItems": {
         "home": "Home",
@@ -40,5 +42,16 @@
         "title": "Uh-Oh...",
         "description": "The page you are looking for may have been moved, deleted, or possibly never existed.",
         "link": "return home"
+    },
+    "Contact": {
+        "title": "Connect with me",
+        "description":"Reach out to me now so we can discuss further."
+    },
+    "Course": {
+        "title": "Coming soon",
+        "description":"We're working hard to bring you something amazing. Stay tuned!"
+    },
+    "animations":{
+        "title":"My favourite animations"
     }
   }

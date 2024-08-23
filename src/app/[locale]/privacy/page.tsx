@@ -1,11 +1,18 @@
 'use client'
+
 import { useAppContext } from "@/context"
 import Anchor from "../components/Anchor"
+import { useLocale } from "next-intl"
 
 export default function Privacy () {
   const {LAUNCH_DATE, EMAIL, COMPANY_NAME} = useAppContext()
+  const locale = useLocale()
+
+
+  
   return (
     <div className='py-20 px-5 min-h-screen'>
+      {locale === "ng" && <div className="relative w-full top-0 bg-red-500 p-2 left-0 mb-5">For legal reasons this page is not written in any other language</div>}
       <div className='w-full max-w-lg mx-auto text-slate-200'>
         <h1 className='text-4xl pb-5 font-bold text-green-500'>Privacy Policy</h1>
         <p className='pb-14 text-md text-slate-100'>At {COMPANY_NAME} , I am committed to protecting the privacy of my website visitors. This Privacy Policy explains how i collect, use, and protect personal data.</p>

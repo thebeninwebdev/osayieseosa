@@ -6,9 +6,12 @@ import { cn } from "@/lib/utils";
 import { Textarea } from "./ui/textarea";
 import emailjs from '@emailjs/browser'
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 export function ContactForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const t = useTranslations('Contact')
 
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -36,10 +39,10 @@ export function ContactForm() {
   return (
     <div className="max-w-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
-        Connect with me
+        {t('title')}
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Reach out to me now so we can discuss further
+        {t('description')}
       </p>
 
       <form className="my-8" onSubmit={handleSubmit} ref={form}>

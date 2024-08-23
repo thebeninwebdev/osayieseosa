@@ -1,6 +1,6 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import { AppWrapper } from "@/context";
 import SplashScreenProvider from "./components/splash-screen-provider";
@@ -11,10 +11,13 @@ import { Toaster } from 'sonner';
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
-  title: "Eseosa Osayi - Official home page",
+  title:"Eseosa Osayi - Official home page",
   description: "Driven by curiosity, fueled by passion, delivering top-notch web applications.",
-  themeColor: "#000000"
 };
+
+export const viewport: Viewport = {
+  themeColor: "#000000"
+}
 
 export default async function LocaleLayout({
   children,

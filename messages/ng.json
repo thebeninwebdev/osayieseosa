@@ -9,7 +9,9 @@
       "hightlight": "Curious",
       "firstButon": "Kontact me",
       "secondButton": "Download cv",
-      "MOTIVATION":"My journey wey carry me enter web development start with my brothers and sisters wey encourage me make i try tech. At first, e hard me because i no know how i go take enter the field, but i don alreay put my mind say i go learn how to code one day. As i dey watch films, i dey always admire that idea wey dem dey call 'laptop and hoodie'. This new interest come make me start to dey try HTML and CSS, I use my secondary schood days build front-end websites and dey explore CSS animations through trial and error, as i be full stack developer now, i nor fit imagine myself for any other place."
+      "MOTIVATION":"My journey wey carry me enter web development start with my brothers and sisters wey encourage me make i try tech. At first, e hard me because i no know how i go take enter the field, but i don alreay put my mind say i go learn how to code one day. As i dey watch films, i dey always admire that idea wey dem dey call 'laptop and hoodie'. This new interest come make me start to dey try HTML and CSS, I use my secondary schood days build front-end websites and dey explore CSS animations through trial and error, as i be full stack developer now, i nor fit imagine myself for any other place.",
+      "ctaTitle":"You dey feel my work abi?",
+      "ctaDescription":"if you get project wey for mind, nor waste time bring am come."
   },
   "NavbarItems": {
     "home": "House",
@@ -40,5 +42,16 @@
       "title": "Wahala...",
       "description": "E be like say the link wey you use nor dey work again or e fit be say the page nor dey before.",
       "link": "turn back"
+  },
+  "Contact": {
+      "title": "Hala me",
+      "description":"You fit use email take reach me make we talk."
+  },
+  "Course": {
+      "title": "E dey Come",
+      "description":"We dey work dey and night make we bring lessons wey dey enter head"
+  },
+  "animations":{
+      "title":"Animations wey dey give me joy"
   }
 }
