@@ -82,7 +82,7 @@ export default function HomePage() {
     className="dark:bg-black text-black dark:text-white w-72 sm:w-80 sm:h-80 rounded-full h-72 relative overflow-clip">
     <Image 
         priority
-        src="/images/dp.jpeg"
+        src="/images/dp.webp"
         fill
         sizes="(max-w:768px) 320px, 288px"
         alt="Eseosa Osayi" 
