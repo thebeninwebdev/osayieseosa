@@ -54,9 +54,9 @@ export default function HomePage() {
 
   return (
   <div className="w-full h-max">
-  <HeroHighlight>
-  <div className="flex-grow flex flex-col lg:flex-row items-center justify-center text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12">
-    <div className="flex flex-col items-center lg:items-start max-w-3xl">
+  <HeroHighlight className="w-full px-5 sm:px-10">
+  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12 w-full h-max">
+    <div className="flex flex-col items-center lg:items-start max-w-3xl w-full lg:space-y-2">
       <p className="text-md sm:text-lg">{t('greeting')}</p>
       <h1 className="text-[2.5rem] sm:text-5xl font-bold">
         {t('introduction')}</h1>
@@ -64,24 +64,25 @@ export default function HomePage() {
         <TypewriterEffectSmooth words={words}/>
       </h2>
       <div className="flex space-x-4 pb-4">
-    <button 
-    className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+    <button
+    className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+    >
       <Anchor href="https://wa.link/t148zf" title={t('firstButon')}/>
     </button>
-  
+
     <button 
     className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
       <Anchor href="https://teal-rozamond-56.tiiny.site/" title={t('secondButton')}/>
-</button>
-      </div>
-    </div>
+    </button>
+  </div>
+</div>
     <HoverBorderGradient
     containerClassName="rounded-full"
     as="div"
     className="dark:bg-black text-black dark:text-white w-72 sm:w-80 sm:h-80 rounded-full h-72 relative overflow-clip">
     <Image 
         priority
-        src="/images/dp.jpg" 
+        src="/images/dp.jpeg"
         fill
         sizes="(max-w:768px) 320px, 288px"
         alt="Eseosa Osayi" 

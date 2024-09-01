@@ -8,6 +8,7 @@ import NextTopLoader from "nextjs-toploader";
 import { SidebarDemo } from "./components/Sidebar";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from 'sonner';
+import {Analytics} from "@vercel/analytics/react"
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default async function LocaleLayout({
       <body>
         <AppWrapper>
         <SplashScreenProvider>
+        <Analytics/>
       <NextTopLoader 
           shadow={false} 
           height={2} 
