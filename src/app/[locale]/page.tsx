@@ -48,19 +48,18 @@ export default function HomePage() {
     },
     {
       text: t('hightlight'),
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-blue-500 dark:text-green-500",
     },
   ];
 
   return (
   <div className="w-full h-max">
-  <HeroHighlight className="w-full px-5 sm:px-10">
+  <HeroHighlight className="w-full px-5 sm:px-8">
   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12 w-full h-max">
-    <div className="flex flex-col items-center lg:items-start max-w-3xl w-full lg:space-y-2">
+    <div className="flex flex-col items-center lg:items-start max-w-3xl w-full sm:space-y-2">
       <p className="text-md sm:text-lg">{t('greeting')}</p>
-      <h1 className="text-[2.5rem] sm:text-5xl font-bold">
-        {t('introduction')}</h1>
-      <h2 className="text-2xl sm:text-3xl font-semibold text-green-500 mb-4">
+      <h1 className="text-[1.8rem] sm:text-4xl font-bold">{t('introduction')}</h1>
+      <h2 className="font-semibold text-green-500 mb-4">
         <TypewriterEffectSmooth words={words}/>
       </h2>
       <div className="flex space-x-4 pb-4">

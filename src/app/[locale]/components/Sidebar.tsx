@@ -109,7 +109,7 @@ const navItems = [
 
           </div> 
           <div className="flex justify-between">
-  <span className="text-neutral-200 text-xs bg-green-700 px-2">{date.toLocaleTimeString()}</span>
+  <span className="text-neutral-200 text-xs bg-green-700 p-1">{date.toLocaleTimeString()}</span>
   <LangSwitcher/>
   </div>
           <div className="flex gap-3 w-full justify-evenly text-xs flex-wrap">

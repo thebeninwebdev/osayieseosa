@@ -10,6 +10,12 @@ import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from 'sonner';
 import {Analytics} from "@vercel/analytics/react"
 import Footer from './components/Footer';
+import {Fira_Code} from "next/font/google"
+
+const fira = Fira_Code({
+  subsets: ['latin'],
+  variable: '--font-fira'
+})
 
 export const metadata: Metadata = {
   title:"Eseosa Osayi - Official home page",
@@ -31,7 +37,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body>
+      <body className={`${fira.variable} font-sans`}>
         <AppWrapper>
         <SplashScreenProvider>
         <Analytics/>
