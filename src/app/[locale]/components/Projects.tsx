@@ -18,14 +18,14 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
           <Image
             alt={title}
             src={img}
-            height="1280"
-            width="800"
+            height={1280}
+            width={800}
             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl pb-10"
           />
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
             {title}
           </h3>
-          <div className="text-sm !m-0 !p-0 font-normal flex-1">
+          <div className="text-xs !m-0 !p-0 font-normal flex-1">
             <span className="text-slate-300 ">
               {description}
             </span>
@@ -78,7 +78,8 @@ export function Projects() {
 
     {
       id: 3,
-      title: t('lavic'),
+      title: "Lavic Medicals - health care app",
+      des: t('lavic'),
       img: "/images/thumbnails/lavicmedicals.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
       link: "https://www.lavicmedicals.org/",

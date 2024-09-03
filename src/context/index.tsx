@@ -12,10 +12,14 @@ export function AppWrapper({children}: {
     const EMAIL:string = "hello@mreseosa.com"
     const LAUNCH_DATE:string = "Thu, August 22"
     const COMPANY_NAME:string = "mrEseosa_"
+    function playSoundOnClick () {
+        let audio = document.getElementById("clickSound") as HTMLAudioElement
+        audio?.play()
+    }
 
 
     return (
-        <AppContext.Provider value={{EMAIL, LAUNCH_DATE, COMPANY_NAME}}>{children}</AppContext.Provider>
+        <AppContext.Provider value={{EMAIL, LAUNCH_DATE, COMPANY_NAME, playSoundOnClick}}>{children}</AppContext.Provider>
       )
 }
 

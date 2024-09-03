@@ -42,7 +42,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, []);
 
   const renderWords = () => {
     return (
@@ -156,7 +156,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className="text-sm md:text-xl lg:text-2xl font-bold"
+          className="text-sm md:text-lg xl:text-2xl font-bold"
           style={{
             whiteSpace: "nowrap",
           }}

@@ -17,7 +17,7 @@ import { ContactForm } from "./components/ContactForm";
 import Lottie from "react-lottie";
  
 export default function HomePage() {
-  const {EMAIL} = useAppContext()
+  const {EMAIL, playSoundOnClick} = useAppContext()
   const textToCopy = EMAIL
   const [copyStatus, setCopyStatus] = useState<boolean>(false)
 
@@ -54,9 +54,10 @@ export default function HomePage() {
 
   return (
   <div className="w-full h-max">
+    <audio id="clickSound" src="/sound.mp3"></audio>
   <HeroHighlight className="w-full px-5 sm:px-8">
   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12 w-full h-max">
-    <div className="flex flex-col items-center lg:items-start max-w-3xl w-full sm:space-y-2">
+    <div className="flex flex-col items-center lg:items-start max-w-3xl w-full">
       <p className="text-md sm:text-lg">{t('greeting')}</p>
       <h1 className="text-[1.8rem] sm:text-4xl font-bold">{t('introduction')}</h1>
       <h2 className="font-semibold text-green-500 mb-4">
@@ -64,12 +65,16 @@ export default function HomePage() {
       </h2>
       <div className="flex space-x-4 pb-4">
     <button
-    className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-sm">
+    className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-sm"
+    onClick={playSoundOnClick}
+    >
       <Anchor href="https://wa.link/t148zf" title={t('firstButon')}/>
     </button>
 
     <button 
-    className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 text-sm">
+    className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white dark:border-green-800 dark:text-slate-200 text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 text-sm"
+    onClick={playSoundOnClick}
+    >
       <Anchor href="https://teal-rozamond-56.tiiny.site/" title={t('secondButton')}/>
     </button>
   </div>
@@ -77,7 +82,7 @@ export default function HomePage() {
     <HoverBorderGradient
       containerClassName="rounded-full"
       as="div"
-      className="dark:bg-black text-black dark:text-white w-72 sm:w-80 sm:h-80 rounded-full h-72 relative overflow-clip"
+      className="dark:bg-black text-black dark:text-white w-72 rounded-full h-72 relative overflow-clip"
     >
     <Image 
         priority
@@ -157,7 +162,9 @@ export default function HomePage() {
   }}/>
 </div>
 <CopyToClipboard text={textToCopy} onCopy={handleOnCopy}>
-<button className="px-6 py-3 rounded-md border border-neutral-300 text-neutral-100 bg-black hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-xs font-medium flex gap-1 items-center">
+<button className="px-6 py-3 rounded-md border border-neutral-300 text-neutral-100 bg-black hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-xs font-medium flex gap-1 items-center"
+onClick={playSoundOnClick}
+>
 {copyStatus?<IconCircleCheck className="w-4"/>:<IconCopy className="w-4"/>}<span>Copy my email</span>
 </button>
 </CopyToClipboard>
