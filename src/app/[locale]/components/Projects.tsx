@@ -58,26 +58,26 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
 export function Projects() {
   const t = useTranslations('Projects')
   const products = [
-    {
-      id: 1,
-      title: "Jatinz - Ecomerce App",
-      des: t('jatinz'),
-      img: "/images/thumbnails/jatinz.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://jatinz.com",
-    },
+    // {
+    //   id: 1,
+    //   title: "Jatinz - Ecomerce App",
+    //   des: t('jatinz'),
+    //   img: "/images/thumbnails/jatinz.png",
+    //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    //   link: "https://jatinz.com",
+    // },
 
     {
-      id: 2,
+      id: 1,
       title:"Norbile Foods - Online Restaurant",
       des: t('norbileFoods'),
       img: "/images/thumbnails/norbilefoods.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      iconLists: ["/re.svg", "/tail.svg"],
       link: "https://norbilefoods.vercel.app/",
     },
 
     {
-      id: 3,
+      id: 2,
       title: "Lavic Medicals - health care app",
       des: t('lavic'),
       img: "/images/thumbnails/lavicmedicals.png",
@@ -86,7 +86,7 @@ export function Projects() {
     },
 
     {
-      id: 4,
+      id: 3,
       title: "Legit gemini exchange",
       des: t('gemini'),
       img: "/images/thumbnails/legitexchange.png",

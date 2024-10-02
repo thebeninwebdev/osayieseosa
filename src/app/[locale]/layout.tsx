@@ -41,7 +41,7 @@ export default async function LocaleLayout({
         <AppWrapper>
         <SplashScreenProvider>
         <Analytics/>
-      <NextTopLoader 
+        <NextTopLoader 
           shadow={false} 
           height={2} 
           color="green" 
