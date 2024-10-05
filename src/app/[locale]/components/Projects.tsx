@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import { PinContainer } from "./ui/3d-pin";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ProjectsObject } from "@/types";
+import dynamic from "next/dynamic"
+import Link from "next/link";
+
+const PinContainer = dynamic(() => import("./ui/3d-pin").then((mod) => mod.PinContainer),{ssr:false});
 
 export function Project({title,description,img,link, iconLists}:ProjectsObject) {
 
@@ -46,9 +48,9 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
             ))
           }
           </div>
-          <Link href={link} className="text-sm underline text-green-300">Check Live Site</Link>
+          <div
+          className="text-sm underline text-green-300">Check Live Site</div>
           </div>
-
           </div>
         </PinContainer>
       </div>
@@ -68,15 +70,6 @@ export function Projects() {
     // },
 
     {
-      id: 1,
-      title:"Norbile Foods - Online Restaurant",
-      des: t('norbileFoods'),
-      img: "/images/thumbnails/norbilefoods.png",
-      iconLists: ["/re.svg", "/tail.svg"],
-      link: "https://norbilefoods.vercel.app/",
-    },
-
-    {
       id: 2,
       title: "Lavic Medicals - health care app",
       des: t('lavic'),
@@ -84,7 +77,14 @@ export function Projects() {
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
       link: "https://www.lavicmedicals.org/",
     },
-
+    {
+      id: 1,
+      title:"Norbile Foods - Online Restaurant",
+      des: t('norbileFoods'),
+      img: "/images/thumbnails/norbilefoods.png",
+      iconLists: ["/re.svg", "/tail.svg"],
+      link: "https://norbilefoods.vercel.app/",
+    },
     {
       id: 3,
       title: "Legit gemini exchange",
