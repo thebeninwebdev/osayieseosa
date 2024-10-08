@@ -37,6 +37,9 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
+      <head>
+      <meta name="google-adsense-account" content="ca-pub-4058102666903293" />
+      </head>
       <body className={`${fira.variable} font-sans`}>
         <AppWrapper>
         <SplashScreenProvider>
