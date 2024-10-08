@@ -23,7 +23,7 @@ export default async function page() {
                 </div>
                 <div className="">
                 {sortedPosts?.length > 0 ? (
-                    <ul className='flex flex-wrap w-full mx-auto gap-4 justify-evenly'>
+                    <ul className='flex flex-wrap w-full mx-auto gap-10 justify-evenly'>
                        { sortedPosts.map(({slug, date, title, description, image}) => {
                         return <li key={slug}>
                             <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
