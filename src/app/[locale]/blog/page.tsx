@@ -1,46 +1,13 @@
 
 import { allDocs } from 'contentlayer/generated'
 import { Metadata } from 'next';
-import {Link} from '@/navigation';
-import { BsCalendarEvent } from 'react-icons/bs';
-import { formatDate, sortPosts } from '@/lib/utils';
-
-interface PostItemProps {
-    slug: string;
-    title: string;
-    description?: string;
-    date: string;
-}
+import { sortPosts } from '@/lib/utils';
+import PostItem from '../components/PostItem';
 
 export const metadata: Metadata = {
     title: "Eseosa Osayi - Blog",
     description: "Building a better web, one line of code at a time. Explore my insights and expertise.",
   };
-
-function PostItem({slug, title, description, date}: PostItemProps){
-    return <article className='flex flex-col gap-2 border-neutral-400 border-b-[0.5px] py-5 '>
-        <div>
-            <h2 className='text-lg font-old underline'>
-                <Link href={slug}>
-                    {title}
-                </Link>
-            </h2>
-        </div>
-        <div className=' text-sm max-w-[50ch]'>{description}</div>
-        <div className='flex justify-between items-center mt-4'>
-            <dl>
-                <dt className='sr-only'>Published On</dt>
-                <dd className='text-xs font-medium flex items-center gap-1'>
-                    <BsCalendarEvent className='w-4' />
-                    <time dateTime={date} >{formatDate(date)}</time>
-                </dd>
-            </dl>
-            <Link href={slug} className='text-xs'>
-            Read post
-            </Link>
-        </div>
-    </article>
-}
 
 export default async function page() {
     const sortedPosts = sortPosts(allDocs)
@@ -56,10 +23,10 @@ export default async function page() {
                 </div>
                 <div className="">
                 {sortedPosts?.length > 0 ? (
-                    <ul className='flex flex-col'>
-                       { sortedPosts.map(({slug, date, title, description}) => {
+                    <ul className='flex flex-wrap w-full mx-auto gap-4 justify-evenly'>
+                       { sortedPosts.map(({slug, date, title, description, image}) => {
                         return <li key={slug}>
-                            <PostItem slug={slug} date={date} title={title} description={description}/>
+                            <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
                         </li>
                        })
                        }

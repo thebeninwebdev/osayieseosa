@@ -4,6 +4,7 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
+import typography from "@tailwindcss/typography";
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
@@ -28,10 +29,79 @@ module.exports = {
           },
         },
       },
+      typography: (theme:any) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.slate.300"),
+            letterSpacing: "-0.01em",
+            a: {
+              color: theme("colors.green.500"),
+              transition: "color 0.2s ease",
+              "&:hover": {
+                color: theme("colors.green.600"),
+              },
+            },
+            "h1, h2, h3, h4, h5, h6": {
+              fontWeight: theme("fontWeight.semibold"),
+              letterSpacing: "-0.02em",
+              color: theme("colors.slate.200")
+            },
+            "h2 > a, h3 > a, h4 > a, h5 > a, h6 > a": {
+              color: "inherit",
+              textDecoration: "inherit",
+              "&::after": {
+                visibility: "hidden",
+                marginLeft: "0.5rem",
+                fontSize: "1.5rem",
+                content: '"#"',
+              },
+              "&:hover": {
+                color: "inherit",
+                "&::after": {
+                  visibility: "visible",
+                },
+              },
+              "&:focus": {
+                outline: "none",
+                "&::after": {
+                  visibility: "visible",
+                },
+              },
+            },
+            pre: {
+              padding: theme("spacing.6"),
+              backgroundColor: theme("colors.neutral.900"),
+            },
+            ":not(pre) > code": {
+              padding: "0.125rem 0.375rem",
+              borderRadius: "0.25rem",
+              backgroundColor: theme("colors.neutral.200"),
+              color: "inherit",
+              fontWeight: "inherit",
+              "&::before, &::after": {
+                content: '""',
+              },
+            },
+            table: {
+              display: "block",
+              overflowX: "auto",
+            },
+          },
+        },
+        invert: {
+          css: {
+            color: theme("colors.neutral.400"),
+            ":not(pre) > code": {
+              backgroundColor: theme("colors.neutral.800"),
+            },
+          },
+        },
+      }),
       
     },
   },
   plugins: [
+    typography,
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

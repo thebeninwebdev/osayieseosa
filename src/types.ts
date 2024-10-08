@@ -21,3 +21,11 @@ export interface ProjectsObject {
   link:string;
   iconLists:string[];
 }
+
+export interface PostItemProps {
+  slug: string;
+  title: string;
+  description?: string;
+  date: string;
+  image: string;
+}

@@ -34,9 +34,9 @@ export default async function Postpage({ params}:PostPageProps) {
 
   return (
     <article className="px-5 pb-20">
-      <div className='text-sm py-10 space-y-5 max-w-xl text-slate-200 mx-auto'>
+      <div className='py-10 space-y-5 max-w-xl mx-auto'>
       <div className=' pb-5'>
-      <h1 className="text-3xl text-green-500 py-2 font-sans font-bold">{title}</h1>
+      <h1 className="text-3xl text-green-500 py-2">{title}</h1>
       <h2 className='text-sm ml-1 text-slate-100'>{description}</h2>
       </div>
       {
@@ -50,7 +50,9 @@ export default async function Postpage({ params}:PostPageProps) {
         priority />
       )
       }
+      <article className="prose">
       <Mdx code={body.code}/>
+      </article>
       </div>
      
     </article>

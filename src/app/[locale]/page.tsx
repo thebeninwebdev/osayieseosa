@@ -15,11 +15,16 @@ import Anchor from "./components/Anchor";
 import {useTranslations} from 'next-intl';
 import { ContactForm } from "./components/ContactForm";
 import Lottie from "react-lottie";
- 
+import { allDocs } from 'contentlayer/generated'
+import PostItem from './components/PostItem';
+import { sortPosts } from '@/lib/utils';
+
 export default function HomePage() {
   const {EMAIL, playSoundOnClick} = useAppContext()
   const textToCopy = EMAIL
   const [copyStatus, setCopyStatus] = useState<boolean>(false)
+
+  const sortedPosts = sortPosts(allDocs)
 
   const handleOnCopy = (text:string, result:any) => {
     if(result){
@@ -102,6 +107,19 @@ export default function HomePage() {
   <div className="w-full py-20">
   <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Recent Projects</h2>
   <Projects/>
+  </div>
+  <div className="w-full space-y-10">
+    <h2 className="px-5 sm:px-10 text-3xl text-green-500">Latest blogs</h2>
+  {sortedPosts?.length > 0 ? (
+      <ul className='flex flex-wrap w-full mx-auto gap-4 justify-evenly'>
+          { sortedPosts.map(({slug, date, title, description, image}) => {
+          return <li key={slug}>
+              <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
+          </li>
+          })
+          }
+      </ul>
+  ):<p>Nothing to see here yet</p>}
   </div>
   <div className="px-5 flex flex-wrap gap-10 justify-evenly py-20 items-center">
    <div className="">

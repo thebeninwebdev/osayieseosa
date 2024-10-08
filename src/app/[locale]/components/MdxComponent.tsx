@@ -62,6 +62,7 @@ export default function Mdx({ code }:{code:string}) {
 
   return (
     <Component
+      className="prose"
       components={{
         a,
         img,
