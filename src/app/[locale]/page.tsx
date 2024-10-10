@@ -112,7 +112,7 @@ export default function HomePage() {
     <h2 className="px-5 sm:px-10 text-3xl text-green-500">Latest blogs</h2>
   {sortedPosts?.length > 0 ? (
       <ul className='flex flex-wrap w-full mx-auto gap-10 justify-evenly'>
-          { sortedPosts.map(({slug, date, title, description, image}) => {
+          { sortedPosts.slice(0,3).map(({slug, date, title, description, image}) => {
           return <li key={slug}>
               <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
           </li>
