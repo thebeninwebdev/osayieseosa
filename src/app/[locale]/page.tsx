@@ -18,6 +18,7 @@ import Lottie from "react-lottie";
 import { allDocs } from 'contentlayer/generated'
 import PostItem from './components/PostItem';
 import { sortPosts } from '@/lib/utils';
+import {Link} from "@/navigation";
 
 export default function HomePage() {
   const {EMAIL, playSoundOnClick} = useAppContext()
@@ -34,7 +35,6 @@ export default function HomePage() {
       toast.error("Failed to copy text, try again")
     }
   }
-
 
   const t = useTranslations('HomePage');
 
@@ -108,16 +108,19 @@ export default function HomePage() {
   <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Recent Projects</h2>
   <Projects/>
   </div>
-  <div className="w-full space-y-10">
-    <h2 className="px-5 sm:px-10 text-3xl text-green-500">Latest blogs</h2>
-  {sortedPosts?.length > 0 ? (
-      <ul className='flex flex-wrap w-full mx-auto gap-10 justify-evenly'>
+  <div className="w-full space-y-10 py-20">
+    <div className="w-full flex justify-between items-center px-5 sm:px-10">
+    <h2 className="text-3xl text-green-500">Latest blogs</h2>
+    <Link href="/blogs" className="underline text-sm">See more</Link>
+    </div>
+      {sortedPosts?.length > 0 ? (
+        <ul className='flex flex-wrap w-full mx-auto gap-1 justify-evenly'>
           { sortedPosts.slice(0,3).map(({slug, date, title, description, image}) => {
           return <li key={slug}>
               <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
           </li>
-          })
-          }
+        })
+      }
       </ul>
   ):<p>Nothing to see here yet</p>}
   </div>
