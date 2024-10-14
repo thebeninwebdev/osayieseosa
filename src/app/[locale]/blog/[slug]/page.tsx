@@ -6,9 +6,11 @@ interface PostPageProps{params:{slug:string}}
 
 export const generateMetadata = ({ params }: PostPageProps) => {
   const post = allDocs.find((post) => post.slugAsParams == params.slug)
+  
   if (!post){
     throw new Error(`Post not found for slug: ${params.slug},${allDocs}`)
   }
+
   return { 
     title: post.title,
     description: post.description,
