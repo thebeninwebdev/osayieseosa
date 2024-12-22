@@ -135,7 +135,8 @@ export const Logo = () => {
       >
       <Link href='/' className="w-max">
       <Image
-        src="/images/logo.png"
+        // src="/images/logo.png"
+        src="/images/xmasLogo.png"
         className="h-7 w-32 flex-shrink-0"
         width={86}
         height={425}
