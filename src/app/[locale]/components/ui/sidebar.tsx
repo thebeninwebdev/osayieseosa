@@ -130,8 +130,9 @@ export const MobileSidebar = ({
         <div className="flex z-20 w-full">
           <Link href="/"> 
         <Image
-          src="/images/logo.png"
-          className="h-7 w-36"
+          // src="/images/logo.png"
+          src="/images/xmasLogo.png"
+          className="w-32"
           width={80}
           height={425}
           alt="Avatar"

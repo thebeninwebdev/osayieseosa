@@ -11,7 +11,6 @@ import {IconTimeline,IconKeyframes,IconArticle,IconBrandGithub, IconBrandInstagr
 import { useTranslations } from "next-intl";
 import LangSwitcher from "./LangSwitcher";
 
-
 export function SidebarDemo({
   children,
 }: Readonly<{
@@ -137,7 +136,7 @@ export const Logo = () => {
       <Image
         // src="/images/logo.png"
         src="/images/xmasLogo.png"
-        className="h-7 w-32 flex-shrink-0"
+        className="w-32 flex-shrink-0"
         width={86}
         height={425}
         alt="Avatar"
