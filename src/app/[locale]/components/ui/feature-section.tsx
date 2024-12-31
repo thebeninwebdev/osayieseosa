@@ -26,11 +26,11 @@ export function FeaturesSectionDemo() {
       description: t('thirdDescription'),
       icon: <IconTerminal2 />,
     },
-    {
-      title: t('fourth'),
-      description: t('fourthDescription'),
-      icon: <IconCloud />,
-    },
+    // {
+    //   title: t('fourth'),
+    //   description: t('fourthDescription'),
+    //   icon: <IconCloud />,
+    // },
     {
       title: t('fifth'),
       description: t('fifthDescription'),

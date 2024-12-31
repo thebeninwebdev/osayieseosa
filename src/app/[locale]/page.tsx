@@ -114,9 +114,9 @@ export default function HomePage() {
     <Link href="/blogs" className="underline text-sm">See more</Link>
     </div>
       {sortedPosts?.length > 0 ? (
-        <ul className='flex flex-wrap w-full mx-auto gap-1 justify-evenly'>
+        <ul className='flex flex-wrap w-full mx-auto gap-2 justify-evenly'>
           { sortedPosts.slice(0,3).map(({slug, date, title, description, image}) => {
-          return <li key={slug}>
+          return <li key={slug} className="my-3">
               <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
           </li>
         })
@@ -128,10 +128,10 @@ export default function HomePage() {
    <div className="">
     <h2 className="text-green-500 text-2xl font-bold">MY MOTIVATION</h2>
     <div className="relative text-slate-200 w-[21rem] h-44 mx-auto my-10">
-    <div
-    className="border-2 border-purple-900 w-44 h-44 flex items-center justify-center rounded-full absolute text-sm">View my work</div>
-    <div
-    className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm">Contact me</div>
+    <Link href="/projects"><div
+    className="border-2 border-purple-900 w-44 h-44 flex items-center justify-center rounded-full absolute text-sm hover:scale-125 cursor-pointer" >View my work</div></Link>
+    <Link href="https://www.instagram.com/mr_eseosa?igsh=MXRyMnJxZGx2ZzV2YQ=="><div
+    className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm hover:scale-125 cursor-pointer">Contact me</div></Link>
     </div>
    </div>
    <div className="">
