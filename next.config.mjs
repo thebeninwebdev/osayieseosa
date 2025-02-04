@@ -1,6 +1,5 @@
 import {withSentryConfig} from '@sentry/nextjs';
 import createNextIntlPlugin from 'next-intl/plugin'
-import {withContentlayer} from 'next-contentlayer'
 
 const withNextIntl = createNextIntlPlugin()
 
@@ -13,7 +12,7 @@ const nextConfig = {
       },
 };
 
-export default withSentryConfig(withNextIntl(withContentlayer(nextConfig)), {
+export default withSentryConfig(withNextIntl(nextConfig), {
 // For all available options, see:
 // https://github.com/getsentry/sentry-webpack-plugin#options
 

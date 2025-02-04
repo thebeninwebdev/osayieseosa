@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { HeroHighlight } from "./components/ui/hero-highlight";
 import { useAppContext } from "@/context";
@@ -15,17 +15,28 @@ import Anchor from "./components/Anchor";
 import {useTranslations} from 'next-intl';
 import { ContactForm } from "./components/ContactForm";
 import Lottie from "react-lottie";
-import { allDocs } from 'contentlayer/generated'
-import PostItem from './components/PostItem';
-import { sortPosts } from '@/lib/utils';
 import {Link} from "@/navigation";
+
+interface Article {
+  author: string;
+  categories: string[];
+  content: string;
+  description: string;
+  enclosure: Record<string, unknown>;
+  guid: string;
+  link: string;
+  pubDate: string;
+  thumbnail: string | null;
+  title: string;
+}
+
+const mediumUrl = "https://medium.com/feed/@osayivictoryeseosa";
 
 export default function HomePage() {
   const {EMAIL, playSoundOnClick} = useAppContext()
   const textToCopy = EMAIL
   const [copyStatus, setCopyStatus] = useState<boolean>(false)
-
-  const sortedPosts = sortPosts(allDocs)
+  const [articles, setArticles] = useState<Article[]>([]);
 
   const handleOnCopy = (text:string, result:any) => {
     if(result){
@@ -56,6 +67,15 @@ export default function HomePage() {
       className: "text-blue-500 dark:text-green-500",
     },
   ];
+  
+      useEffect(() => {
+          fetch(`https://api.rss2json.com/v1/api.json?rss_url=${mediumUrl}` )
+              .then(res => res.json())
+              .then(data => {
+                  const items = data.items as Article[];
+                  setArticles(items);
+              });
+      }, []);
 
   return (
   <div className="w-full h-max">
@@ -108,22 +128,57 @@ export default function HomePage() {
   <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Recent Projects</h2>
   <Projects/>
   </div>
-  <div className="w-full space-y-10 py-20">
-    <div className="w-full flex justify-between items-center px-5 sm:px-10">
-    <h2 className="text-3xl text-green-500">Latest blogs</h2>
-    <Link href="/blogs" className="underline text-sm">See more</Link>
+  <div className="w-full">
+    <div className="flex flex-wrap justify-center gap-5  w-full p-4 ">
+        {articles.slice(0,3).map((article, index) => (
+            <div
+                key={index}
+                className=" w-full max-w-sm border border-gray-200 rounded-lg shadow relative"
+            >
+                <a href="#" className="relative">
+                    <img
+                        className="h-44 w-full object-cover rounded-t-lg"
+                        src={article.description.match(/<img[^>]+src="([^">]+)"/)?.[1]}
+                        alt={article.title}
+                    />
+                    <div className="absolute w-full bottom-0 h-10 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 justify-between px-3 flex items-center">
+                    <div>
+                        {article.author}
+                    </div>
+                    <a
+                        href={article.link}
+                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white"
+                    >
+                        Read more
+                        <svg
+                            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 14 10"
+                        >
+                            <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9"
+                            />
+                        </svg>
+                    </a>
+                    </div>
+                </a>
+                <div className="p-5">
+                    <a href="#">
+                        <h5 className="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+                            {article.title}
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        ))}
     </div>
-      {sortedPosts?.length > 0 ? (
-        <ul className='flex flex-wrap w-full mx-auto gap-2 justify-evenly'>
-          { sortedPosts.slice(0,3).map(({slug, date, title, description, image}) => {
-          return <li key={slug} className="my-3">
-              <PostItem slug={slug} date={date} title={title} description={description} image={image as string}/>
-          </li>
-        })
-      }
-      </ul>
-  ):<p>Nothing to see here yet</p>}
-  </div>
+</div>
   <div className="px-5 flex flex-wrap gap-10 justify-evenly py-20 items-center">
    <div className="">
     <h2 className="text-green-500 text-2xl font-bold">MY MOTIVATION</h2>

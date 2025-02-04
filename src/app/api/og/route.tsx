@@ -9,7 +9,6 @@ export async function GET(request: NextRequest) {
        const { searchParams } = request.nextUrl
        const title = searchParams.get("title")
 
-
        if(!title){
             return new Response("No title Provided", {status: 500})
        }

@@ -4,7 +4,6 @@ import React, {createContext, useContext} from 'react'
 
 const AppContext = createContext<any>(undefined)
 
-
 export function AppWrapper({children}: {
     children: React.ReactNode;
 }){

@@ -1,4 +1,4 @@
-  `import React from 'react'
+  import React from 'react'
   import Anchor from '../components/Anchor'
   import { Animations } from '@/types'
   import { useTranslations } from 'next-intl'
@@ -70,4 +70,3 @@
       </div>
     )
   }
-`

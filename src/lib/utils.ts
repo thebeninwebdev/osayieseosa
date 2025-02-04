@@ -1,5 +1,4 @@
 import { ClassValue, clsx } from "clsx";
-import { Doc } from "contentlayer/generated";
 import { twMerge } from "tailwind-merge";
  
 export function cn(...inputs: ClassValue[]) {
@@ -12,13 +11,5 @@ export function formatDate(input: string | number): string{
     month: "long",
     day: "numeric",
     year: "numeric"
-  })
-}
-
-export function sortPosts(posts:Array<Doc>){
-  return posts.sort((a,b) => {
-    if( a.date > b.date) return -1
-    if( a.date > b.date) return 1
-    return 0
   })
 }

@@ -131,10 +131,10 @@ export const MobileSidebar = ({
           <Link href="/"> 
         <Image
           // src="/images/logo.png"
-          src="/images/xmasLogo.png"
+          src="/images/logo.png"
           className="w-32"
-          width={80}
-          height={425}
+          width={221}
+          height={500}
           alt="Avatar"
         /></Link>
         <LangSwitcher className="flex-1"/>
