@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { SparklesCore } from "./ui/sparkles";
 
 const SplashScreenProvider = ({children}: Readonly<{ children: React.ReactNode; }>) => {
     const [isLoading, setIsLoading] = useState(true)
@@ -15,30 +14,80 @@ const SplashScreenProvider = ({children}: Readonly<{ children: React.ReactNode; 
     }, [])
 
     return isLoading?
-    <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-    <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-      Eseosa Osayi
-    </h1>
-    <div className="w-[40rem] h-40 relative">
-      {/* Gradients */}
-      <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-      <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-      <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-      <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
-      {/* Core component */}
-      <SparklesCore
-        background="transparent"
-        minSize={0.4}
-        maxSize={1}
-        particleDensity={1200}
-        className="w-full h-full"
-        particleColor="#FFFFFF"
+    <div className="min-h-screen bg-black flex items-center justify-center">
+    {/* Main container for the loading animation */}
+    <div className="relative w-64 h-64">
+      {/* Outer glowing ring */}
+      <div className="absolute inset-0 rounded-full animate-spin-slow"
+        style={{
+          background: 'conic-gradient(from 0deg, #2ecc71, #27ae60, #2ecc71)',
+          filter: 'blur(12px)',
+          animation: 'spin 4s linear infinite'
+        }} 
       />
-
-      {/* Radial Gradient to prevent sharp edges */}
-      <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      
+      {/* Inner black circle */}
+      <div className="absolute inset-2 bg-black rounded-full z-10" />
+      
+      {/* Subtle particle effect inside the circle */}
+      <div className="absolute inset-8 rounded-full overflow-hidden z-20">
+        <div className="w-full h-full"
+          style={{
+            background: 'linear-gradient(45deg, #27ae60 0%, transparent 100%)',
+            filter: 'blur(8px)',
+            transform: 'rotate(-45deg)',
+            opacity: 0.3,
+            animation: 'pulse 2s ease-in-out infinite'
+          }}
+        />
+      </div>
+      
+      {/* Text container */}
+      <div className="absolute inset-0 flex items-center justify-center z-30">
+        <h1 
+          className="text-3xl font-bold tracking-wider"
+          style={{
+            color: '#2ecc71',
+            textShadow: '0 0 8px rgba(46, 204, 113, 0.3)',
+            animation: 'glow 2s ease-in-out infinite'
+          }}
+        >
+          mreseosa
+        </h1>
+      </div>
     </div>
+
+    {/* CSS Animations */}
+    <style jsx>{`
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 0.3;
+          transform: rotate(-45deg) scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: rotate(-45deg) scale(1.1);
+        }
+      }
+
+      @keyframes glow {
+        0%, 100% {
+          text-shadow: 0 0 8px rgba(46, 204, 113, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+        }
+      }
+    `}</style>
   </div>
     : children;
 }
