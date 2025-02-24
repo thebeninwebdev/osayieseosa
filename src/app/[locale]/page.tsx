@@ -80,68 +80,8 @@ export default function HomePage() {
   return (
   <div className="w-full h-max">
     <audio id="clickSound" src="/sound.mp3"></audio>
-    <div className="relative min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 p-6 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center space-x-1">
-            <div className="w-4 h-4 bg-green-500 rounded-sm" />
-            <div className="w-4 h-4 bg-white/30 rounded-sm" />
-          </div>
-          
-          {/* Navigation Links */}
-          <div className="hidden md:flex space-x-8 text-sm">
-            <a href="#home" className="hover:text-green-500 transition-colors">Home</a>
-            <a href="#service" className="hover:text-green-500 transition-colors">Service</a>
-            <a href="#portfolio" className="hover:text-green-500 transition-colors">Portfolio</a>
-            <a href="#blog" className="hover:text-green-500 transition-colors">Blog</a>
-          </div>
-          
-          {/* CTA Button */}
-          <button className="px-4 py-2 border border-white/20 hover:bg-green-500 hover:border-green-500 transition-all duration-300 text-sm">
-            Get in Touch
-          </button>
-        </div>
-      </nav>
 
-      {/* Main Hero Content */}
-      <div className="min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Text Content */}
-          <div className="space-y-4">
-            <h1 className="text-6xl md:text-7xl font-bold space-y-2">
-              <div>Your</div>
-              <div>Name</div>
-              <div>Here</div>
-            </h1>
-            <p className="text-gray-400 max-w-md">
-              Hello, nice to meet you! I would like to welcome you with my personal portfolio.
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="relative aspect-square">
-            <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-20" />
-            <img 
-              src="/api/placeholder/800/800" 
-              alt="Portrait" 
-              className="w-full h-full object-cover"
-            />
-            {/* Green Overlay */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-500 mix-blend-multiply z-10" />
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-12 border-2 border-white/20 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce" />
-        </div>
-      </div>
-    </div>
-  {/* <HeroHighlight className="w-full px-5 sm:px-8">
+   <HeroHighlight className="w-full px-5 sm:px-8">
   <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 mt-12 w-full h-max">
     <div className="flex flex-col items-center lg:items-start max-w-3xl w-full">
       <p className="text-md sm:text-lg">{t('greeting')}</p>
@@ -180,7 +120,7 @@ export default function HomePage() {
       />
       </HoverBorderGradient>
     </div>
-  </HeroHighlight> */}
+  </HeroHighlight> 
   <div className="w-full py-20"> 
     <h2 className="text-3xl font-bold text-green-500 px-5 mb-5">My Skills</h2>
     <FeaturesSectionDemo/>
