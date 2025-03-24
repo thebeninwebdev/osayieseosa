@@ -88,7 +88,7 @@ export default function HomePage() {
       <h2 className="font-semibold text-green-500 mb-4">
         <TypewriterEffectSmooth words={words}/>
       </h2>
-      <div className="w-full pb-4 px-10 lg:px-0">
+      <div className="w-full pb-4 lg:px-0">
     <button
     className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-sm w-72 lg:w-[20rem]"
     onClick={playSoundOnClick}
@@ -117,7 +117,7 @@ export default function HomePage() {
         src="/images/dp.webp"
         fill
         sizes="(max-w:768px) 320px, 288px"
-        alt="Eseosa Osayi" 
+        alt="mrEseosa" 
         className=" object-cover" 
       />
       </HoverBorderGradient>
