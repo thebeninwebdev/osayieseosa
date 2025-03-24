@@ -1,6 +1,6 @@
-### Hi there, I'm [Eseosa Osayi](https://mreseosa.com) 👋
+### Hi there, I'm [mrEseosa](https://mreseosa.com) 👋
 
-I am currently a computer science student at [Western delta university](https://wdu.edu.ng/), Oghara. Apart from that, I am a Fullstack javascript developer who loves coding,writing blogs, music and chess.
+I am a Fullstack javascript developer who loves coding,writing blogs, music and chess.
 
 ## My stack:
 
