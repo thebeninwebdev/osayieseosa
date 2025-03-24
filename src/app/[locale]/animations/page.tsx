@@ -5,7 +5,7 @@
   import { Metadata } from 'next'
 
   export const metadata: Metadata = {
-    title: "Eseosa Osayi - Animations",
+    title: "mrEseosa - Animations",
     description: "Some of my favourite animations.",
   };
 

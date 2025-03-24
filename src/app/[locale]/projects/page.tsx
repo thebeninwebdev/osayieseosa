@@ -2,7 +2,7 @@ import { Projects } from "../components/Projects"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Eseosa Osayi - My projects",
+  title: "mrEseosa - My projects",
   description: "Come take a look my projects crafted with care and technique to solve problems and foster innovation.",
 };
 

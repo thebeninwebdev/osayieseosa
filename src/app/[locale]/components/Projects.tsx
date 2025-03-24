@@ -85,14 +85,14 @@ export function Projects() {
       iconLists: ["/re.svg", "/tail.svg"],
       link: "https://norbilefoods.vercel.app/",
     },
-    {
-      id: 3,
-      title: "Legit gemini exchange",
-      des: t('gemini'),
-      img: "/images/thumbnails/legitexchange.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://www.legitgeminiexchange.com/",
-    },
+    // {
+    //   id: 3,
+    //   title: "Legit gemini exchange",
+    //   des: t('gemini'),
+    //   img: "/images/thumbnails/legitexchange.png",
+    //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    //   link: "https://www.legitgeminiexchange.com/",
+    // },
 
   ];
   return (

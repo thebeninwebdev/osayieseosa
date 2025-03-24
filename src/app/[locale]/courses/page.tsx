@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Eseosa Osayi - Courses",
+  title: "mrEseosa - Courses",
   description: "I use my expertise gathered over the years to simplify key concepts and techniques and grow the tech community.",
 };
 

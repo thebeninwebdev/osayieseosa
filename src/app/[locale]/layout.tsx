@@ -18,7 +18,7 @@ const fira = Fira_Code({
 })
 
 export const metadata: Metadata = {
-  title:"Eseosa Osayi - Official home page",
+  title:"mrEseosa - Official home page",
   description: "Driven by curiosity, fueled by passion, delivering top-notch web applications.",
 };
 

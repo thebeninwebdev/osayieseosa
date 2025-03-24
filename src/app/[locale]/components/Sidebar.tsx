@@ -59,27 +59,27 @@ const navItems = [
       links: [
       {
         name: "Github", 
-        link:"https://github.com/osayieseosa", 
+        link:"https://github.com/thebeninwebdev", 
         icon:(<IconBrandGithub className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       },
       {
         name:"Instagram", 
-        link: "https://www.instagram.com/mr_eseosa?igsh=MXRyMnJxZGx2ZzV2YQ==",
+        link: "https://www.instagram.com/thebeninwebdesigner?igsh=MXRyMnJxZGx2ZzV2YQ==",
         icon:(<IconBrandInstagram className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       },
-      {
-        name:"Stack Overflow", 
-        link:"https://stackoverflow.com/users/15001668/eseosa-osayi",
-        icon:(<IconBrandStackoverflow className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-      },
+      // {
+      //   name:"Stack Overflow", 
+      //   link:"https://stackoverflow.com/users/15001668/eseosa-osayi",
+      //   icon:(<IconBrandStackoverflow className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+      // },
       {
         name:"WhatsApp", 
-        link:"https://wa.link/5my8vf",
+        link:"https://wa.link/a2ssmy",
         icon:(<IconBrandWhatsapp className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       },
       {
         name:"Tel", 
-        link:"tel:09155276978",
+        link:"tel:+2349014116505",
         icon:(<IconPhone className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       }
     ]}
@@ -134,7 +134,6 @@ export const Logo = () => {
       >
       <Link href='/' className="w-max">
       <Image
-        // src="/images/logo.png"
         src="/images/logo.png"
         className="w-28 flex-shrink-0"
         width={221}

@@ -1,7 +1,7 @@
 {
     "HomePage": {
-        "greeting":"HELLO THERE, WELCOME TO MY SITE",
-        "introduction":"I'm Eseosa Osayi",
+        "greeting": "HELLO THERE, WELCOME TO MY SITE",
+        "introduction": "I'm MR ESEOSA",
         "phrase1": "An",
         "phrase2": "ever",
         "phrase3": "curious",
@@ -9,28 +9,28 @@
         "hightlight": "Developer",
         "firstButon": "Contact me",
         "secondButton": "Download cv",
-        "MOTIVATION":"My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong.",
-        "ctaTitle":"Are you impressed by my work? Let's talk",
-        "ctaDescription":"I would love nothing more than to hear about your project and how i can be of service."
+        "MOTIVATION": "My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong.",
+        "ctaTitle": "Are you impressed by my work? Let's talk",
+        "ctaDescription": "I would love nothing more than to hear about your project and how i can be of service."
     },
     "NavbarItems": {
         "home": "Home",
-        "projects":"Projects",
-        "animations":"Animations",
+        "projects": "Projects",
+        "animations": "Animations",
         "blogs": "Blogs",
         "courses": "Courses"
     },
     "Features": {
-        "first":"UI/UX DESIGN",
-        "firstDescription":"Hire me to convert your idea into a clear cut picture.",
-        "second":"FRONTEND DEVELOPMENT",
-        "secondDescription":"Using some of the best tools in the industry i create trendy and eye catching software's to keep your users engaged.",
-        "third":"BACKEND DEVELOPMENT",
-        "thirdDescription":"To ensure security, customer satisfaction and avoid data breach i ensure best practices while building you a top notch backend for your software.",
-        "fourth":"DATABASE DESIGN",
-        "fourthDescription":"This is a step that is very critical to building a proper software and i dedicate my time to ensuring my well designed database.",
-        "fifth":"PROJECT PLANNING",
-        "fifthDescription":"Hire me to get you a complete project brief."
+        "first": "UI/UX DESIGN",
+        "firstDescription": "Hire me to convert your idea into a clear cut picture.",
+        "second": "FRONTEND DEVELOPMENT",
+        "secondDescription": "Using some of the best tools in the industry i create trendy and eye catching software's to keep your users engaged.",
+        "third": "BACKEND DEVELOPMENT",
+        "thirdDescription": "To ensure security, customer satisfaction and avoid data breach i ensure best practices while building you a top notch backend for your software.",
+        "fourth": "DATABASE DESIGN",
+        "fourthDescription": "This is a step that is very critical to building a proper software and i dedicate my time to ensuring my well designed database.",
+        "fifth": "PROJECT PLANNING",
+        "fifthDescription": "Hire me to get you a complete project brief."
     },
     "Projects": {
         "jatinz": "Discover the vibrant essence of Nigeria at, your premier destination for authentic Nigerian-made products.",
@@ -45,13 +45,13 @@
     },
     "Contact": {
         "title": "Connect with me",
-        "description":"Reach out to me now so we can discuss further."
+        "description": "Reach out to me now so we can discuss further."
     },
     "Course": {
         "title": "Coming soon",
-        "description":"We're working hard to bring you something amazing. Stay tuned!"
+        "description": "We're working hard to bring you something amazing. Stay tuned!"
     },
-    "animations":{
-        "title":"My favourite animations"
+    "animations": {
+        "title": "My favourite animations"
     }
-  }
+}
