@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ProjectsObject } from "@/types";
 import dynamic from "next/dynamic"
-import Link from "next/link";
 
 const PinContainer = dynamic(() => import("./ui/3d-pin").then((mod) => mod.PinContainer),{ssr:false});
 
@@ -60,14 +59,6 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
 export function Projects() {
   const t = useTranslations('Projects')
   const products = [
-    // {
-    //   id: 1,
-    //   title: "Jatinz - Ecomerce App",
-    //   des: t('jatinz'),
-    //   img: "/images/thumbnails/jatinz.png",
-    //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    //   link: "https://jatinz.com",
-    // },
 
     {
       id: 2,
@@ -85,14 +76,14 @@ export function Projects() {
       iconLists: ["/re.svg", "/tail.svg"],
       link: "https://norbilefoods.vercel.app/",
     },
-    // {
-    //   id: 3,
-    //   title: "Legit gemini exchange",
-    //   des: t('gemini'),
-    //   img: "/images/thumbnails/legitexchange.png",
-    //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    //   link: "https://www.legitgeminiexchange.com/",
-    // },
+    {
+      id: 3,
+      title: "Esefabrics - Clothing brand",
+      des: t('esefabrics'),
+      img: "/images/thumbnails/esefabrics.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://www.esefabrics.vercel.app/",
+    },
 
   ];
   return (
