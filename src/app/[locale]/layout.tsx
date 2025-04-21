@@ -11,6 +11,7 @@ import { Toaster } from 'sonner';
 import {Analytics} from "@vercel/analytics/react"
 import Footer from './components/Footer';
 import {Fira_Code} from "next/font/google"
+import Script from 'next/script'
 
 const fira = Fira_Code({
   subsets: ['latin'],
@@ -33,32 +34,40 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: {locale: string};
 }>) {
-
   const messages = await getMessages();
+  
   return (
-    <html lang={locale}>
+    <html lang={locale} className="dark">
       <head>
-      <meta name="google-adsense-account" content="ca-pub-4058102666903293" />
+        <meta name="google-adsense-account" content="ca-pub-4058102666903293" />
+        {/* Preload script to prevent flash of light theme */}
+        <Script id="prevent-flash" strategy="beforeInteractive">
+          {`(function() {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          })()`}
+        </Script>
       </head>
-      <body className={`${fira.variable} font-sans`}>
+      <body className={`${fira.variable} font-sans bg-black text-white`}>
         <AppWrapper>
         <SplashScreenProvider>
         <Analytics/>
-        <NextTopLoader 
-          shadow={false} 
-          height={2} 
-          color="green" 
+        <NextTopLoader
+          shadow={false}
+          height={2}
+          color="green"
           showSpinner={false}
-          />
+        />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
-            enableSystem
+            enableSystem={false}
+            forcedTheme="dark"
             disableTransitionOnChange
           >
             <NextIntlClientProvider messages={messages}>
             <SidebarDemo>
-            <div  className="h-full relative overflow-y-auto w-full">
+            <div className="h-full relative overflow-y-auto w-full">
               <Toaster position="bottom-right" richColors/>
               {children}
               <Footer/>

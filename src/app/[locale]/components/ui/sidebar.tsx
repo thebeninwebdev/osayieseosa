@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import {LinkProps} from 'next/link'
-import { Link } from "@/navigation";
-import React, { useState, createContext, useContext } from "react";
+import { Link, usePathname } from "@/navigation";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { IconKeyframes } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
@@ -47,9 +47,14 @@ export const SidebarProvider = ({
   animate?: boolean;
 }) => {
   const [openState, setOpenState] = useState(false);
+  const pathName = usePathname()
 
   const open = openProp !== undefined ? openProp : openState;
   const setOpen = setOpenProp !== undefined ? setOpenProp : setOpenState;
+
+  useEffect(() => {
+    setOpen(false)
+  },[pathName, setOpen])
 
   return (
     <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>
@@ -119,31 +124,37 @@ export const MobileSidebar = ({
 }: React.ComponentProps<"div">) => {
   const { open, setOpen } = useSidebar();
   return (
-    <>
-    {open &&<div className="inset-0 bg-black absolute z-50 opacity-50 lg:hidden"/>}
       <div
         className={cn(
-          "h-16 px-5 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-black border-b-[1px] border-neutral-500"
+          "h-16 px-5 flex flex-row md:hidden items-center justify-between bg-neutral-100 dark:bg-black border-b border-neutral-200 dark:border-neutral-800 shadow-sm"
         )}
         {...props}
       >
-        <div className="flex z-20 w-full">
-          <Link href="/"> 
+        <div className="flex items-center justify-between w-full">
+          <Link href="/" className="flex-shrink-0"> 
         <Image
-          // src="/images/logo.png"
           src="/images/logo.png"
-          className="w-32"
-          width={221}
-          height={500}
-          alt="Avatar"
+          className="w-32 h-auto"
+          width={500}
+          height={221}
+          alt="Logo"
+          priority
         /></Link>
-        <LangSwitcher className="flex-1"/>
-          <div className="cursor-pointer flex items-center">
+        <div className="flex items-center gap-3">
+        <LangSwitcher className="mr-2"/>
+        <button 
+         onClick={() => setOpen(!open)}
+        className="p-2 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
+        aria-label="Toggle menu"
+         >
             <IconMenu2
-            className="text-neutral-800 dark:text-neutral-200"
-            onClick={() => setOpen(!open)}
+            className="text-neutral-800 dark:text-neutral-200 w-5 h-5"
+            
           />
-          </div>
+          </button>
+        </div>
+        
+
         </div>
         <AnimatePresence>
           {open && (
@@ -156,7 +167,7 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full  w-[calc(100%_-_50px)] inset-0 bg-white dark:bg-black px-5 py-10 sm:p-10 z-[100] flex flex-col justify-between border-r-[1px] border-neutral-300",
+                "fixed h-full  w-full inset-0 bg-white dark:bg-black px-5 py-10 sm:p-10 z-[100] flex flex-col justify-between",
                 className
               )}
             >
@@ -171,7 +182,6 @@ export const MobileSidebar = ({
           )}
         </AnimatePresence>
       </div>
-    </>
   );
 };
 

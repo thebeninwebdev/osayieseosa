@@ -64,7 +64,7 @@ const navItems = [
       },
       {
         name:"Instagram", 
-        link: "https://www.instagram.com/thebeninwebdesigner?igsh=MXRyMnJxZGx2ZzV2YQ==",
+        link: "https://www.instagram.com/thebeninwebdesigner/",
         icon:(<IconBrandInstagram className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       },
       // {
@@ -125,22 +125,17 @@ const navItems = [
 }
 export const Logo = () => {
   return (
-    <div
-      className="font-normal flex space-x-2 items-center w-max py-1 relative z-20"
-    >
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-      <Link href='/' className="w-max">
-      <Image
-        src="/images/logo.png"
-        className="w-28 flex-shrink-0"
-        width={221}
-        height={500}
-        alt="Avatar"
-    />
-    </Link>
+    <div className="font-normal flex space-x-2 items-center w-max py-1 relative z-20">
+      <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Link href='/' className="w-max">
+          <Image
+            src="/images/logo.png"
+            className="w-28 flex-shrink-0"
+            width={500}
+            height={221}
+            alt="Avatar"
+          />
+        </Link>
       </motion.span>
     </div>
   );

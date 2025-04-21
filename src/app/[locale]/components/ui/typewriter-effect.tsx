@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export const TypewriterEffect = ({
   words,
@@ -26,8 +26,11 @@ export const TypewriterEffect = ({
 
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
+  const hasAnimated = useRef(false);
+  
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated.current) {
+      hasAnimated.current = true;
       animate(
         "span",
         {
@@ -42,7 +45,7 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, []);
+  }, [isInView, animate]);
 
   const renderWords = () => {
     return (
@@ -117,6 +120,10 @@ export const TypewriterEffectSmooth = ({
       text: word.text.split(""),
     };
   });
+  
+  // Use ref to track if animation has played
+  const hasAnimated = useRef(false);
+  
   const renderWords = () => {
     return (
       <div>
@@ -149,6 +156,9 @@ export const TypewriterEffectSmooth = ({
         whileInView={{
           width: "fit-content",
         }}
+        viewport={{
+          once: true, // This makes the animation run only once
+        }}
         transition={{
           duration: 2,
           ease: "linear",
@@ -173,7 +183,6 @@ export const TypewriterEffectSmooth = ({
         }}
         transition={{
           duration: 0.8,
-
           repeat: Infinity,
           repeatType: "reverse",
         }}
