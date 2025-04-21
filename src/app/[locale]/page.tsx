@@ -300,7 +300,7 @@ export default function HomePage() {
         View my work
       </div>
     </Link>
-    <Link href="https://www.instagram.com/mr_eseosa?igsh=MXRyMnJxZGx2ZzV2YQ==">
+    <Link href="https://instagram.com/thebeninwebdev/">
       <div
         className="border-2 border-blue-700 w-44 flex items-center justify-center h-44 rounded-full absolute left-40 text-sm hover:scale-125 cursor-pointer"
         onClick={handleClickWithVibration()}

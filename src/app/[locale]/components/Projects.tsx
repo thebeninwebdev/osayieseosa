@@ -59,15 +59,6 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
 export function Projects() {
   const t = useTranslations('Projects')
   const products = [
-
-    {
-      id: 2,
-      title: "Lavic Medicals - health care app",
-      des: t('lavic'),
-      img: "/images/thumbnails/lavicmedicals.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://www.lavicmedicals.org/",
-    },
     {
       id: 1,
       title:"Norbile Foods - Online Restaurant",
@@ -77,12 +68,20 @@ export function Projects() {
       link: "https://norbilefoods.vercel.app/",
     },
     {
+      id: 2,
+      title: "Lavic Medicals - health care app",
+      des: t('lavic'),
+      img: "/images/thumbnails/lavicmedicals.png",
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+      link: "https://lavicmedicals.org/",
+    },
+    {
       id: 3,
       title: "Esefabrics - Clothing brand",
       des: t('esefabrics'),
       img: "/images/thumbnails/esefabrics.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://www.esefabrics.vercel.app/",
+      link: "https://esefabrics.vercel.app/",
     },
 
   ];
