@@ -60,14 +60,6 @@ export function Projects() {
   const t = useTranslations('Projects')
   const products = [
     {
-      id: 1,
-      title:"Norbile Foods - Online Restaurant",
-      des: t('norbileFoods'),
-      img: "/images/thumbnails/norbilefoods.png",
-      iconLists: ["/re.svg", "/tail.svg"],
-      link: "https://norbilefoods.vercel.app/",
-    },
-    {
       id: 2,
       title: "Lavic Medicals - health care app",
       des: t('lavic'),
@@ -83,7 +75,14 @@ export function Projects() {
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
       link: "https://esefabrics.vercel.app/",
     },
-
+    {
+      id: 1,
+      title:"Norbile Foods - Online Restaurant",
+      des: t('norbileFoods'),
+      img: "/images/thumbnails/norbilefoods.png",
+      iconLists: ["/re.svg", "/tail.svg"],
+      link: "https://norbilefoods.vercel.app/",
+    }
   ];
   return (
     <div className="flex flex-wrap w-full p-5 gap-20 justify-center">
