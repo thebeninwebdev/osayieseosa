@@ -10,31 +10,38 @@ import { useTranslations } from "next-intl";
 
 export function ContactForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
 
   const t = useTranslations('Contact')
 
   const form = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>)  =>  {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)  =>  {
     e.preventDefault()
     setIsLoading(true)
 
-    emailjs
-    .sendForm('service_phf0kjo', 'template_qe92p5u', form.current as HTMLFormElement, {
-      publicKey: 'c0zCWWjxpA7GQuqGQ',
-    })
-    .then(
-      () => {
-        setIsLoading(false)
-        toast.success("Your email has been received")
-        if(form.current !== null) form.current.reset()
-      },
-      (error) => {
-        setIsLoading(false)
-        console.log(error)
-        toast.error("An error occured, try again")
-      },
-    );
+
+  try {
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData?.error || 'Failed to send email.');
+    }
+
+    toast.success('Message sent successfully!');
+    (e.target as HTMLFormElement).reset(); 
+  } catch (error: any) {
+    toast.error(error.message || 'Something went wrong.');
+  } finally {
+    setIsLoading(false);
+  }
   }
   return (
     <div className="max-w-lg w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
@@ -53,7 +60,8 @@ export function ContactForm() {
             placeholder="Jeremiah Udoh" 
             type="text" 
             required
-            name="from_name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             />
           </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -63,7 +71,8 @@ export function ContactForm() {
             placeholder="johndoe@example.com" 
             type="email" 
             required
-            name="user_email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
@@ -72,7 +81,8 @@ export function ContactForm() {
             id="message" 
             placeholder="hello Eseosa"
             required
-            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </LabelInputContainer>
 

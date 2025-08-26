@@ -21,7 +21,9 @@ import {Link} from "@/navigation";
 const vibrate = (pattern: number | number[]): void => {
   if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
     try {
+
       navigator.vibrate(pattern);
+
     } catch (error) {
       console.log('Vibration API error:', error);
     }

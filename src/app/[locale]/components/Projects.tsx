@@ -61,11 +61,11 @@ export function Projects() {
   const products = [
     {
       id: 2,
-      title: "Lavic Medicals - health care app",
-      des: t('lavic'),
-      img: "/images/thumbnails/lavicmedicals.png",
+      title: "SBP Hotel - Hotel booking website",
+      des: t('sbp'),
+      img: "/images/thumbnails/sbphotel.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-      link: "https://lavicmedicals.org/",
+      link: "https://sbphotel.com/",
     },
     {
       id: 3,
