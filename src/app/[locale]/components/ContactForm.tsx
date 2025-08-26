@@ -24,7 +24,7 @@ export function ContactForm() {
 
 
   try {
-    const response = await fetch('/api/send', {
+    const response = await fetch('../../api/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message }),
@@ -32,13 +32,13 @@ export function ContactForm() {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData?.error || 'Failed to send email.');
+      toast.error(errorData?.error || 'Failed to send email.');
     }
 
     toast.success('Message sent successfully!');
     (e.target as HTMLFormElement).reset(); 
   } catch (error: any) {
-    toast.error(error.message || 'Something went wrong.');
+    toast.error(error?.message || 'Something went wrong.');
   } finally {
     setIsLoading(false);
   }
@@ -87,7 +87,7 @@ export function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset] disabled:from-neutral-300 disabled:to-neutral-300 disabled:dark:from-neutral-700 disabled:dark:to-neutral-700 disabled:cursor-not-allowed disabled:shadow-none"
           type="submit"
           disabled={isLoading}
         >
