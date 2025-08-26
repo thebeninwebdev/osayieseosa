@@ -51,7 +51,7 @@ export function EmailTemplate({ name, message, email }: EmailTemplateProps) {
             <td style={{ padding: "30px" }}>
               <p style={{ fontSize: "16px", margin: "0 0 15px" }}>Hello Team,</p>
               <p style={{ fontSize: "16px", margin: "0 0 25px" }}>
-                You've received a new inquiry via the contact form on the <strong>SBP Hotel</strong> website. Please
+                You&apos;ve received a new inquiry via the contact form on the <strong>SBP Hotel</strong> website. Please
                 find the details below:
               </p>
 
@@ -120,7 +120,7 @@ export function EmailTemplate({ name, message, email }: EmailTemplateProps) {
 export default function EmailTemplatePreview() {
   return (
     <EmailTemplate
-      firstName="John Doe"
+      name="John Doe"
       message="I would like to inquire about booking a room for a family vacation in July. Do you have any special offers for long stays?"
       email="john.doe@example.com"
     />
