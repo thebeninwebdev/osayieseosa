@@ -99,7 +99,7 @@ export default function HomePage() {
   return (
   <div className="w-full h-max">
    <HeroHighlight className="w-full px-5 sm:px-8 h-max py-10">
-  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-8 lg:space-y-0 lg:space-x-8 w-full h-max">
+  <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between text-center lg:text-left space-y-4 sm:space-y-6 lg:space-y-0 lg:space-x-8 w-full h-max">
     <div className="flex flex-col max-w-xl w-full text-left">
       <h2 className="pb-4 text-[#e0e0e0] text-sm">{t('moto')}</h2>
       <p className="text-2xl sm:text-4xl font-extrabold pb-8">{t('greeting')}</p>
@@ -127,22 +127,18 @@ export default function HomePage() {
   </HeroHighlight> 
     <div className="px-5 flex flex-wrap gap-10 justify-evenly items-start py-16 sm:py-20 lg:py-28">
     <h2 className="text-[#f9d339] text-2xl font-bold text-left w-full">MY MOTIVATION</h2>
-    <div className="relative text-slate-200 w-[21rem] h-44 mx-auto my-10">
-    <Link href="/projects">
-      <div
-        className="border-2 border-[#333333] w-40 h-40 flex items-center justify-center rounded-full absolute text-sm hover:scale-95 transition-transform cursor-pointer"
-      >
-        View our work
-      </div>
-    </Link>
-    <Link href="https://wa.me/2349155276978/">
-      <div
-        className="border-2 border-[#333333] w-40 flex items-center justify-center h-40 rounded-full absolute right-10 text-sm hover:scale-95 duration-500 cursor-pointer"
-      >
-        Contact us
-      </div>
-    </Link>
+<div className="flex flex-wrap justify-center gap-6 my-10">
+  <Link href="/projects">
+    <div className="border-2 border-[#333333] w-36 h-36 flex items-center justify-center rounded-full text-sm hover:scale-95 transition-transform cursor-pointer">
+      View our work
     </div>
+  </Link>
+  <Link href="https://wa.me/2349155276978/">
+    <div className="border-2 border-[#333333] w-36 h-36 flex items-center justify-center rounded-full text-sm hover:scale-95 duration-500 cursor-pointer">
+      Contact us
+    </div>
+  </Link>
+</div>
    <div className="">
     <p className="max-w-[60ch] text-sm text-[#e0e0e0]">{t('MOTIVATION')}</p>
     <br/>
