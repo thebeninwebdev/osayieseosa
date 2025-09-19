@@ -130,12 +130,12 @@ export default function HomePage() {
 <div className="flex flex-wrap justify-center gap-6 my-10">
   <Link href="/projects">
     <div className="border-2 border-[#333333] w-36 h-36 flex items-center justify-center rounded-full text-sm hover:scale-95 transition-transform cursor-pointer">
-      View our work
+      View my work
     </div>
   </Link>
   <Link href="https://wa.me/2349155276978/">
     <div className="border-2 border-[#333333] w-36 h-36 flex items-center justify-center rounded-full text-sm hover:scale-95 duration-500 cursor-pointer">
-      Contact us
+      Contact my
     </div>
   </Link>
 </div>

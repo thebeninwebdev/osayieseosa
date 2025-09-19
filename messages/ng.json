@@ -1,11 +1,10 @@
 {
   "HomePage": {
     "moto": "Benin City #1 For Website Matter",
-    "greeting": "Customers go dash you money once we don finish work for your website",
+    "greeting": "Customers go dash you money once i don finish work for your website",
     "firstButon": "Come Talk Your Mind!",
-    "secondButton": "Download cv",
     "MOTIVATION": "My journey wey carry me enter web development start with my brothers and sisters wey encourage me make i try tech. At first, e hard me because i no know how i go take enter the field, but i don alreay put my mind say i go learn how to code one day. As i dey watch films, i dey always admire that idea wey dem dey call 'laptop and hoodie'. This new interest come make me start to dey try HTML and CSS, I use my secondary schood days build front-end websites and dey explore CSS animations through trial and error, as i dey tech now, i nor fit imagine myself for any other place.",
-    "ctaTitle": "You dey feel our work abi?",
+    "ctaTitle": "You dey feel my work abi?",
     "ctaDescription": "if you get project for mind, nor waste time bring am come."
   },
   "NavbarItems": {
@@ -16,9 +15,9 @@
     "courses": "Lessons"
   },
   "Features": {
-    "firstDescription": "If we don build your website finish, you don check am and you nor just like wetin you dey see just tell us we go give you your money complete.",
-    "secondDescription": "After we don build your website and you don settle us finish we go give you better hamper, wey we dey use take say thank you.",
-    "thirdDescription": "If you never build website with us before we go give you reach 20% discount for next time you wan build again",
+    "firstDescription": "If i don build your website finish, you don check am and you nor just like wetin you dey see just tell me i go give you your money complete.",
+    "secondDescription": "After i don build your website and you don settle me finish we go give you better hamper (gift basket), wey i dey use take say thank you.",
+    "thirdDescription": "If you never build website with me before i go give you reach 20% discount for next time you wan build again",
     "fourthDescription": "You must to collect MR Eseosa jotter before you commot wey you fit use take alert your friends where you build your website."
   },
   "Projects": {
@@ -34,12 +33,12 @@
     "link": "turn back"
   },
   "Contact": {
-    "title": "Hala Us",
-    "description": "You fit use email take reach us make we talk."
+    "title": "Hala me",
+    "description": "You fit use email take reach me make we talk."
   },
   "Course": {
     "title": "E dey Come",
-    "description": "We dey work dey and night make we bring lessons wey dey enter head"
+    "description": "I dey work day and night make we bring lessons wey dey enter head"
   },
   "animations": {
     "title": "Animations wey dey give me joy"
