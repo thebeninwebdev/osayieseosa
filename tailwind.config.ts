@@ -3,8 +3,6 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-/** @type {import('tailwindcss').Config} */
-import typography from "@tailwindcss/typography";
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
@@ -101,7 +99,6 @@ module.exports = {
     },
   },
   plugins: [
-    typography,
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

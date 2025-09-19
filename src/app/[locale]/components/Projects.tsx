@@ -48,7 +48,7 @@ export function Project({title,description,img,link, iconLists}:ProjectsObject) 
           }
           </div>
           <div
-          className="text-sm underline text-green-300">Check Live Site</div>
+          className="text-sm underline text-[#d8b93f]">Check Live Site</div>
           </div>
           </div>
         </PinContainer>

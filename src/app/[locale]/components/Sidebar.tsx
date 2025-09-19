@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Anchor from "./Anchor";
-import {IconTimeline,IconKeyframes,IconArticle,IconBrandGithub, IconBrandInstagram,IconBrandStackoverflow,IconBrandWhatsapp,IconPhone, IconCertificate, IconHome2} from "@tabler/icons-react"
+import {IconTimeline,IconArticle, IconBrandInstagram,IconBrandWhatsapp,IconPhone, IconHome2} from "@tabler/icons-react"
 import { useTranslations } from "next-intl";
 import LangSwitcher from "./LangSwitcher";
 
@@ -30,6 +30,14 @@ export function SidebarDemo({
 
 const navItems = [
     { 
+      name: "+234 915 527 6978", 
+      link: "tel:+2349155276978",
+    },
+    { 
+      name: "hello@mreseosa.com", 
+      link: "mailto:hello@mreseosa.com",
+    },
+    { 
       name: t('home'), 
       link: "/",
       icon:(<IconHome2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />) 
@@ -39,39 +47,29 @@ const navItems = [
       link: "/projects",
       icon:(<IconTimeline className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />) 
     },
-    { 
-      name: t('animations'), 
-      link: "/animations",
-      icon:(<IconKeyframes className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-    },
+    // { 
+    //   name: t('animations'), 
+    //   link: "/animations",
+    //   icon:(<IconKeyframes className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+    // },
     { 
       name: t('blogs'), 
-      link: "/blog",
+      link: "https://blog.mreseosa.com",
       icon:(<IconArticle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
     },
-    {
-      name: t('courses'), 
-      link: "/courses",
-      icon:(<IconCertificate className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-    },
+    // {
+    //   name: t('courses'), 
+    //   link: "/courses",
+    //   icon:(<IconCertificate className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
+    // },
     {
       name: "Social media", 
       links: [
-      {
-        name: "Github", 
-        link:"https://github.com/thebeninwebdev", 
-        icon:(<IconBrandGithub className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-      },
       {
         name:"Instagram", 
         link: "https://www.instagram.com/thebeninwebdesigner/",
         icon:(<IconBrandInstagram className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       },
-      // {
-      //   name:"Stack Overflow", 
-      //   link:"https://stackoverflow.com/users/15001668/eseosa-osayi",
-      //   icon:(<IconBrandStackoverflow className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
-      // },
       {
         name:"WhatsApp", 
         link:"https://wa.link/a2ssmy",
@@ -79,7 +77,7 @@ const navItems = [
       },
       {
         name:"Tel", 
-        link:"tel:+2349014116505",
+        link:"tel:+2349155276978",
         icon:(<IconPhone className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />)
       }
     ]}
@@ -108,7 +106,7 @@ const navItems = [
 
           </div> 
           <div className="flex justify-between">
-  <span className="text-neutral-200 text-xs bg-green-700 p-1">{date.toLocaleTimeString()}</span>
+  <span className="text-neutral-200 text-xs bg-[#b19832] p-1">{date.toLocaleTimeString()}</span>
   <LangSwitcher/>
   </div>
           <div className="flex gap-3 w-full justify-evenly text-xs flex-wrap">
@@ -129,11 +127,11 @@ export const Logo = () => {
       <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Link href='/' className="w-max">
           <Image
-            src="/images/logo.png"
-            className="w-28 flex-shrink-0"
-            width={500}
-            height={221}
-            alt="Avatar"
+            src="/images/mreseosa-logo.png"
+            className="w-44 flex-shrink-0"
+            width={300}
+            height={150}
+            alt="mreseosa logo"
           />
         </Link>
       </motion.span>

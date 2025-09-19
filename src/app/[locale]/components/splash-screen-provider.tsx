@@ -1,66 +1,68 @@
-'use client'
+"use client"
 
-import { useEffect, useState } from "react";
+import type React from "react"
 
-const SplashScreenProvider = ({children}: Readonly<{ children: React.ReactNode; }>) => {
+import { useEffect, useState } from "react"
+
+const SplashScreenProvider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   const [isLoading, setIsLoading] = useState(true)
-  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
     }, 3000)
-    
+
     return () => clearTimeout(timer)
   }, [])
-  
-  if (!isLoading) return children;
-  
+
+  if (!isLoading) return children
+
   return (
     <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
       {/* Main container for the loading animation */}
       <div className="relative w-64 h-64 flex items-center justify-center">
         {/* Outer glowing ring */}
-        <div 
+        <div
           className="absolute inset-0 rounded-full"
           style={{
-            background: 'conic-gradient(from 0deg, #2ecc71, #27ae60, #2ecc71)',
-            filter: 'blur(12px)',
-            animation: 'spin 4s linear infinite'
+            background: "conic-gradient(from 0deg, #FFB800, #FFA000, #FFB800)",
+            filter: "blur(12px)",
+            animation: "spin 4s linear infinite",
           }}
         />
-        
+
         {/* Inner black circle */}
         <div className="absolute inset-2 bg-black rounded-full z-10" />
-        
+
         {/* Subtle particle effect inside the circle */}
         <div className="absolute inset-8 rounded-full overflow-hidden z-20">
-          <div 
+          <div
             className="w-full h-full"
             style={{
-              background: 'linear-gradient(45deg, #27ae60 0%, transparent 100%)',
-              filter: 'blur(8px)',
-              transform: 'rotate(-45deg)',
+              background: "linear-gradient(45deg, #FFA000 0%, transparent 100%)",
+              filter: "blur(8px)",
+              transform: "rotate(-45deg)",
               opacity: 0.3,
-              animation: 'pulse 2s ease-in-out infinite'
+              animation: "pulse 2s ease-in-out infinite",
             }}
           />
         </div>
-        
+
         {/* Text container */}
         <div className="absolute inset-0 flex items-center justify-center z-30">
           <h1
             className="text-3xl font-bold tracking-wider"
             style={{
-              color: '#2ecc71',
-              textShadow: '0 0 8px rgba(46, 204, 113, 0.3)',
-              animation: 'glow 2s ease-in-out infinite'
+              color: "#FFB800",
+              textShadow: "0 0 8px rgba(255, 184, 0, 0.3)",
+              animation: "glow 2s ease-in-out infinite",
             }}
           >
             mreseosa
           </h1>
         </div>
       </div>
-      
+
       <style jsx global>{`
         @keyframes spin {
           from {
@@ -84,15 +86,15 @@ const SplashScreenProvider = ({children}: Readonly<{ children: React.ReactNode; 
         
         @keyframes glow {
           0%, 100% {
-            text-shadow: 0 0 8px rgba(46, 204, 113, 0.3);
+            text-shadow: 0 0 8px rgba(255, 184, 0, 0.3);
           }
           50% {
-            text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+            text-shadow: 0 0 15px rgba(255, 184, 0, 0.5);
           }
         }
       `}</style>
     </div>
-  );
+  )
 }
 
-export default SplashScreenProvider;
+export default SplashScreenProvider

@@ -1,17 +1,12 @@
 {
   "HomePage": {
-    "greeting": "HOW FAR NA, WELCOME TO MY WEBSITE",
-    "introduction": "I be MR ESEOSA",
-    "phrase1": "One",
-    "phrase2": "Javascript",
-    "phrase3": "developer",
-    "phrase4": "Wey",
-    "hightlight": "Curious",
-    "firstButon": "Kontact me",
+    "moto": "Benin City #1 For Website Matter",
+    "greeting": "Customers go dash you money once we don finish work for your website",
+    "firstButon": "Come Talk Your Mind!",
     "secondButton": "Download cv",
-    "MOTIVATION": "My journey wey carry me enter web development start with my brothers and sisters wey encourage me make i try tech. At first, e hard me because i no know how i go take enter the field, but i don alreay put my mind say i go learn how to code one day. As i dey watch films, i dey always admire that idea wey dem dey call 'laptop and hoodie'. This new interest come make me start to dey try HTML and CSS, I use my secondary schood days build front-end websites and dey explore CSS animations through trial and error, as i be full stack developer now, i nor fit imagine myself for any other place.",
-    "ctaTitle": "You dey feel my work abi?",
-    "ctaDescription": "if you get project wey for mind, nor waste time bring am come."
+    "MOTIVATION": "My journey wey carry me enter web development start with my brothers and sisters wey encourage me make i try tech. At first, e hard me because i no know how i go take enter the field, but i don alreay put my mind say i go learn how to code one day. As i dey watch films, i dey always admire that idea wey dem dey call 'laptop and hoodie'. This new interest come make me start to dey try HTML and CSS, I use my secondary schood days build front-end websites and dey explore CSS animations through trial and error, as i dey tech now, i nor fit imagine myself for any other place.",
+    "ctaTitle": "You dey feel our work abi?",
+    "ctaDescription": "if you get project for mind, nor waste time bring am come."
   },
   "NavbarItems": {
     "home": "House",
@@ -21,16 +16,10 @@
     "courses": "Lessons"
   },
   "Features": {
-    "first": "UI/UX DESIGN",
-    "firstDescription": "I fit turn that idea wey you get to picture wey nor dey wash.",
-    "second": "FRONTEND DEVELOPMENT",
-    "secondDescription": "If you wan make website i go make am over fine anybody wey enter your website go confirm say e go well.",
-    "third": "BACKEND DEVELOPMENT",
-    "thirdDescription": "normally if you make website hackers dey like spoil show for you, but if i help you make am dem nor born dem well say dem go fit hack am",
-    "fourth": "DATABASE DESIGN",
-    "fourthDescription": "This level wey you see so people suppose focus on am, e get why but dem nor dey do am well but i go run am for you perfectly.",
-    "fifth": "PROJECT PLANNING",
-    "fifthDescription": "Before i even start project i go settle down reason am make i nor go make mistake wey go come spoil show for you."
+    "firstDescription": "If we don build your website finish, you don check am and you nor just like wetin you dey see just tell us we go give you your money complete.",
+    "secondDescription": "After we don build your website and you don settle us finish we go give you better hamper, wey we dey use take say thank you.",
+    "thirdDescription": "If you never build website with us before we go give you reach 20% discount for next time you wan build again",
+    "fourthDescription": "You must to collect MR Eseosa jotter before you commot wey you fit use take alert your friends where you build your website."
   },
   "Projects": {
     "jatinz": "Come experience the vibrant spirit of Naija for here, your correct place to find authentic Nigerian-made products.",
@@ -45,8 +34,8 @@
     "link": "turn back"
   },
   "Contact": {
-    "title": "Hala me",
-    "description": "You fit use email take reach me make we talk."
+    "title": "Hala Us",
+    "description": "You fit use email take reach us make we talk."
   },
   "Course": {
     "title": "E dey Come",

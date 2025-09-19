@@ -1,15 +1,10 @@
 {
     "HomePage": {
-        "greeting": "HELLO THERE, WELCOME TO MY SITE",
-        "introduction": "I'm MR ESEOSA",
-        "phrase1": "An",
-        "phrase2": "ever",
-        "phrase3": "curious",
-        "phrase4": "javascript",
-        "hightlight": "Developer",
-        "firstButon": "Contact me",
+        "moto": "Benin City’s #1 Web Design Agency",
+        "greeting": "Customers will hand you their money once we build your website.",
+        "firstButon": "Get Free Consultation Today!",
         "secondButton": "Download cv",
-        "MOTIVATION": "My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my high school years building frontend websites and exploring CSS animations. Through trial and error, I realized that being a full-stack developer is where I truly belong.",
+        "MOTIVATION": "My journey into web development began with my siblings, who encouraged me to explore a career in tech. Initially, i found it difficult because i wasn't sure how to break into the field, but i was determined to learn code eventually. Watching movies, I always admired the idea of 'the laptop and the hoodie'.This newfound interest led me to expirement with HTML and CSS, spending my secondary school days building frontend websites. Through trial and error, I realized this career path would be most fufilling.",
         "ctaTitle": "Are you impressed by my work? Let's talk",
         "ctaDescription": "I would love nothing more than to hear about your project and how i can be of service."
     },
@@ -21,16 +16,10 @@
         "courses": "Courses"
     },
     "Features": {
-        "first": "UI/UX DESIGN",
-        "firstDescription": "Hire me to convert your idea into a clear cut picture.",
-        "second": "FRONTEND DEVELOPMENT",
-        "secondDescription": "Using some of the best tools in the industry i create trendy and eye catching software's to keep your users engaged.",
-        "third": "BACKEND DEVELOPMENT",
-        "thirdDescription": "To ensure security, customer satisfaction and avoid data breach i ensure best practices while building you a top notch backend for your software.",
-        "fourth": "DATABASE DESIGN",
-        "fourthDescription": "This is a step that is very critical to building a proper software and i dedicate my time to ensuring my well designed database.",
-        "fifth": "PROJECT PLANNING",
-        "fifthDescription": "Hire me to get you a complete project brief."
+        "firstDescription": "If after building your website you are not 100% satisfied with our work within 7 days, your money will be refunded in full.",
+        "secondDescription": "Once you build a website with us you get a free hamper or Gift basket as a token of our appreciation.",
+        "thirdDescription": "After building your first website with us, you get a 20% discount on your next project.",
+        "fourthDescription": "You get a free MR Eseosa Jotter on any website you build with us and for any plan you go with."
     },
     "Projects": {
         "jatinz": "Discover the vibrant essence of Nigeria at, your premier destination for authentic Nigerian-made products.",

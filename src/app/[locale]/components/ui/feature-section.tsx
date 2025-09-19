@@ -12,30 +12,25 @@ export function FeaturesSectionDemo() {
   const t = useTranslations('Features');
   const features = [
     {
-      title: t('first'),
+      title: "Money Back Guarantee",
       description: t('firstDescription'),
       icon: <IconArtboard />,
     },
     {
-      title: t('second'),
+      title: "Free Hamper / Gift Basket",
       description: t('secondDescription'),
       icon: <IconEaseInOut />,
     },
     {
-      title: t('third'),
+      title: "20% Discount on your next project",
       description: t('thirdDescription'),
       icon: <IconTerminal2 />,
     },
-    // {
-    //   title: t('fourth'),
-    //   description: t('fourthDescription'),
-    //   icon: <IconCloud />,
-    // },
     {
-      title: t('fifth'),
-      description: t('fifthDescription'),
-      icon: <IconRouteAltLeft />,
-    }
+      title: "Free Jotter / Notebook",
+      description: t('fourthDescription'),
+      icon: <IconCloud />,
+    },
   ];
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
@@ -75,7 +70,7 @@ const Feature = ({
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-5">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center"/>
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover/feature:bg-[#f9d339] transition-all duration-200 origin-center"/>
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
           {title}
         </span>

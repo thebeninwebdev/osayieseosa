@@ -133,15 +133,15 @@ export const MobileSidebar = ({
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="flex-shrink-0"> 
         <Image
-          src="/images/logo.png"
-          className="w-32 h-auto"
-          width={500}
-          height={221}
+          src="/images/mreseosa-logo.png"
+          className="w-40 h-auto"
+          width={300}
+          height={150}
           alt="Logo"
           priority
         /></Link>
         <div className="flex items-center gap-3">
-        <LangSwitcher className="mr-2"/>
+          <Link href="tel:09155276978" className="text-nowrap">Call Now</Link>
         <button 
          onClick={() => setOpen(!open)}
         className="p-2 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
