@@ -175,7 +175,7 @@ export default function HomePage() {
   style={{ width: 100, height: 100 }}
 />
 </div>
-{/* @ts-expect-error outdated types */}
+{/* @ts-ignore: react-copy-to-clipboard types are outdated */}
 <CopyToClipboard text={textToCopy} onCopy={handleOnCopy}>
 <button 
   className="px-6 py-3 rounded-md border border-neutral-300 text-neutral-100 bg-black hover:-translate-y-1 transform transition duration-200 hover:shadow-md text-xs font-medium flex gap-1 items-center"
