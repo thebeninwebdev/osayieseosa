@@ -20,7 +20,7 @@ const fira = Fira_Code({
 
 export const metadata: Metadata = {
   title:"mrEseosa - Official home page",
-  description: "Driven by curiosity, fueled by passion, delivering top-notch web applications.",
+  description: "mrEseosa is the best web development agency in Benin City, delivering modern, high-quality websites that help businesses grow, stand out, and succeed online.",
 };
 
 export const viewport: Viewport = {
