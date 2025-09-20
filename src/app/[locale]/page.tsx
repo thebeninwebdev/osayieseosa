@@ -135,7 +135,7 @@ export default function HomePage() {
   </Link>
   <Link href="https://wa.me/2349155276978/">
     <div className="border-2 border-[#333333] w-36 h-36 flex items-center justify-center rounded-full text-sm hover:scale-95 duration-500 cursor-pointer">
-      Contact my
+      Contact me
     </div>
   </Link>
 </div>
